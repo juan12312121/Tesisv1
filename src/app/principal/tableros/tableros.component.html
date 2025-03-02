@@ -1,0 +1,353 @@
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<div class="container">
+
+    <app-navbar></app-navbar>
+   
+    
+    <div class="app-container">
+       <app-aside></app-aside>
+        
+        <div class="main-content">
+            <div class="board-header">
+                <div>
+                    <h1 class="page-title">Tablero: App Móvil</h1>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-top: 8px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <div class="project-avatar" style="background-color: #0052cc; width: 24px; height: 24px; font-size: 12px;">AM</div>
+                            <span style="font-size: 14px;">MOB-2023</span>
+                        </div>
+                        <span style="color: var(--text-secondary); font-size: 14px;">•</span>
+                        <span style="color: var(--text-secondary); font-size: 14px;">Sprint 3 (25 Feb - 10 Mar)</span>
+                    </div>
+                </div>
+                
+                <div class="board-header-actions">
+                    <button class="button button-secondary">
+                        <span><i class="fas fa-eye"></i></span>
+                        <span>Solo mis tareas</span>
+                    </button>
+                    <button class="button button-primary" id="create-task-btn">
+                        <span><i class="fas fa-plus"></i></span>
+                        <span>Crear tarea</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="board-filter-bar">
+                <div class="board-filter-group">
+                    <div style="font-size: 14px; color: var(--text-secondary);">Filtros:</div>
+                    <div class="filter-pill active">
+                        <span class="filter-pill-icon"><i class="fas fa-user"></i></span>
+                        <span>Asignadas a mí</span>
+                    </div>
+                    <div class="filter-pill">
+                        <span class="filter-pill-icon"><i class="fas fa-circle" style="color: red;"></i></span>
+                        <span>Alta prioridad</span>
+                    </div>
+                </div>
+                <div class="board-filter-group">
+                    <div style="font-size: 14px; color: var(--text-secondary);">Tipo:</div>
+                    <div class="filter-pill">
+                        <span class="filter-pill-icon"><i class="fas fa-bug"></i></span>
+                        <span>Bugs</span>
+                    </div>
+                    <div class="filter-pill">
+                        <span class="filter-pill-icon"><i class="fas fa-book-open"></i></span>
+                        <span>Stories</span>
+                    </div>
+                    <div class="filter-pill">
+                        <span class="filter-pill-icon"><i class="fas fa-check"></i></span>
+                        <span>Tareas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="kanban-container">
+                <!-- Columna Por hacer -->
+                <div class="kanban-column">
+                    <div class="column-header">
+                        <div class="column-title">
+                            <span>Por hacer</span>
+                            <span class="column-count">4</span>
+                        </div>
+                        <div class="column-actions">
+                            <div class="column-action"><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="column-cards">
+                        <div class="task-card" draggable="true">
+                            <div class="task-card-header">
+                                <div class="task-badges">
+                                    <div class="task-badge badge-story">Story</div>
+                                    <div class="task-badge badge-priority">Prioridad: Alta</div>
+                                </div>
+                                <div class="task-title">Implementar notificaciones push</div>
+                                <div class="task-id">MOB-356</div>
+                            </div>
+                            <div class="task-card-body">
+                                <div class="task-description">Integrar sistema de notificaciones push para alertas en tiempo real a los usuarios.</div>
+                            </div>
+                            <div class="task-card-footer">
+                                <div class="task-assignee">
+                                    <div class="assignee-avatar">MS</div>
+                                </div>
+                                <div class="task-due">
+                                    <span><i class="fas fa-calendar-alt"></i></span>
+                                    <span>8 Mar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="task-card" draggable="true">
+                            <div class="task-card-header">
+                                <div class="task-badges">
+                                    <div class="task-badge badge-task">Task</div>
+                                </div>
+                                <div class="task-title">Actualizar librerías de UI</div>
+                                <div class="task-id">MOB-358</div>
+                            </div>
+                            <div class="task-card-body">
+                                <div class="task-description">Actualizar todas las librerías de UI a las últimas versiones disponibles.</div>
+                            </div>
+                            <div class="task-card-footer">
+                                <div class="task-assignee">
+                                    <div class="assignee-avatar">JD</div>
+                                </div>
+                                <div class="task-due">
+                                    <span><i class="fas fa-calendar-alt"></i></span>
+                                    <span>5 Mar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="task-card" draggable="true">
+                            <div class="task-card-header">
+                                <div class="task-badges">
+                                    <div class="task-badge badge-bug">Bug</div>
+                                </div>
+                                <div class="task-title">Error en pantalla de perfil</div>
+                                <div class="task-id">MOB-362</div>
+                            </div>
+                            <div class="task-card-body">
+                                <div class="task-description">Corregir error que impide cargar la foto de perfil del usuario.</div>
+                            </div>
+                            <div class="task-card-footer">
+                                <div class="task-assignee">
+                                    <div class="assignee-avatar">MS</div>
+                                </div>
+                                <div class="task-due">
+                                    <span><i class="fas fa-calendar-alt"></i></span>
+                                    <span>7 Mar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="task-card" draggable="true">
+                            <div class="task-card-header">
+                                <div class="task-badges">
+                                    <div class="task-badge badge-task">Task</div>
+                                </div>
+                                <div class="task-title">Documentar API de usuario</div>
+                                <div class="task-id">MOB-359</div>
+                            </div>
+                            <div class="task-card-body">
+                                <div class="task-description">Actualizar documentación de la API para las nuevas funciones de gestión de usuarios.</div>
+                            </div>
+                            <div class="task-card-footer">
+                                <div class="task-assignee">
+                                    <div class="assignee-avatar">AL</div>
+                                </div>
+                                <div class="task-due">
+                                    <span><i class="fas fa-calendar-alt"></i></span>
+                                    <span>9 Mar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="add-card-btn">
+                            <span><i class="fas fa-plus"></i></span>
+                            <span>Añadir tarea</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna En progreso -->
+                <div class="kanban-column">
+                    <div class="column-header">
+                        <div class="column-title">
+                            <span>En progreso</span>
+                            <span class="column-count">3</span>
+                        </div>
+                        <div class="column-actions">
+                            <div class="column-action"><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    
+                    <div class="column-cards">
+                        <div class="task-card" draggable="true">
+                            <div class="task-card-header">
+                                <div class="task-badges">
+                                    <div class="task-badge badge-story">Story</div>
+                                </div>
+                                <div class="task-title">Rediseño de pantalla de inicio</div>
+                                <div class="task-id">MOB-348</div>
+                            </div>
+                            <div class="task-card-body">
+                                <div class="task-description">Implementar el nuevo diseño de la pantalla de inicio según los mockups aprobados.</div>
+                            </div>
+                            <div class="task-card-footer">
+                                <div class="task-assignee">
+                                    <div class="assignee-avatar">MS</div>
+                                </div>
+                                <div class="task-due">
+                                    <span><i class="fas fa-calendar-alt"></i></span>
+                                    <span>6 Mar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="task-card" draggable="true">
+                            <div class="task-card-header">
+                                <div class="task-badges">
+                                    <div class="task-badge badge-bug">Bug</div>
+                                    <div class="task-badge badge-priority">Prioridad: Alta</div>
+                                </div>
+                                <div class="task-title">Fallo en sincronización offline</div>
+                                <div class="task-id">MOB-350</div>
+                            </div>
+                            <div class="task-card-body">
+                                <div class="task-description">Resolver problema que causa pérdida de datos al sincronizar después de trabajar offline.</div>
+                            </div>
+                            <div class="task-card-footer">
+                                <div class="task-assignee">
+                                    <div class="assignee-avatar">JD</div>
+                                </div>
+                                <div class="task-due" class="overdue">
+                                    <span><i class="fas fa-calendar-alt"></i></span>
+                                    <span>2 Mar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="task-card" draggable="true">
+                            <div class="task-card-header">
+                                <div class="task-badges">
+                                    <div class="task-badge badge-task">Task</div>
+                                </div>
+                                <div class="task-title">Optimizar rendimiento de listados</div>
+                                <div class="task-id">MOB-355</div>
+                            </div>
+                            <div class="task-card-body">
+                                <div class="task-description">Mejorar el rendimiento de las listas de datos con muchos elementos.</div>
+                            </div>
+                            <div class="task-card-footer">
+                                <div class="task-assignee">
+                                    <div class="assignee-avatar">MS</div>
+                                </div>
+                                <div class="task-due">
+                                    <span><i class="fas fa-calendar-alt"></i></span>
+                                    <span>7 Mar</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="add-card-btn">
+                            <span><i class="fas fa-plus"></i></span>
+                            <span>Añadir tarea</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna Revisión -->
+                
+                <!-- Botón para añadir columna -->
+                <div class="add-column-btn">
+                    <span><i class="fas fa-plus"></i></span>
+                    <span>Añadir columna</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para crear tarea -->
+    <div class="modal" id="task-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Crear nueva tarea</h2>
+                <button class="modal-close" id="close-modal-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="task-form">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="form-label" for="task-title">Título</label>
+                                <input type="text" class="form-control" id="task-title" placeholder="Título de la tarea" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="form-label" for="task-id">ID</label>
+                                <input type="text" class="form-control" id="task-id" placeholder="MOB-XXX" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="task-description">Descripción</label>
+                        <textarea class="form-control" id="task-description" rows="3" placeholder="Descripción detallada de la tarea"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="form-label" for="task-type">Tipo</label>
+                                <select class="form-control form-select" id="task-type">
+                                    <option value="story">Story</option>
+                                    <option value="task">Tarea</option>
+                                    <option value="bug">Bug</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="form-label" for="task-priority">Prioridad</label>
+                                <select class="form-control form-select" id="task-priority">
+                                    <option value="none">Normal</option>
+                                    <option value="high">Alta</option>
+                                    <option value="medium">Media</option>
+                                    <option value="low">Baja</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="form-label" for="task-assignee">Asignado a</label>
+                                <select class="form-control form-select" id="task-assignee">
+                                    <option value="MS">Miguel Sánchez (MS)</option>
+                                    <option value="JD">Juan Díaz (JD)</option>
+                                    <option value="AL">Ana López (AL)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label class="form-label" for="task-due-date">Fecha límite</label>
+                                <input type="date" class="form-control" id="task-due-date">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="button button-secondary" id="cancel-task-btn">Cancelar</button>
+                <button class="button button-primary" id="save-task-btn">Guardar tarea</button>
+            </div>
+        </div>
+    </div>
+</div>
