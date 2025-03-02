@@ -6,3 +6,19 @@
 
 }
 
+:root {
+    --primary-color: #0052cc;
+    --primary-light: #e6f0ff;
+    --secondary-color: #253858;
+    --background-color: #f4f5f7;
+    --card-color: #ffffff;
+    --hover-color: #f0f2f5;
+    --text-color: #172b4d;
+    --text-secondary: #5e6c84;
+    --success-color: #36b37e;
+    --warning-color: #ffab00;
+    --danger-color: #ff5630;
+    --info-color: #00b8d9;
+    --border-color: #dfe1e6;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}

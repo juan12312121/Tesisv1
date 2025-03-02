@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router'; // Import RouterLink if needed for standalone components
 
 @Component({
   selector: 'app-aside',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.css'
 })

@@ -1,1 +1,290 @@
-<p>informes works!</p>
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<div class="container">
+    <app-navbar></app-navbar>
+    
+    <div class="app-container">
+       <app-aside></app-aside>
+        
+        <div class="main-content">
+            <div class="reports-header">
+                <div>
+                    <h1 class="page-title">Informes de progreso</h1>
+                    <div class="page-subtitle">Proyecto: App Móvil (MOB-2023)</div>
+                </div>
+                
+                <div class="date-filter">
+                    <span style="font-size: 14px;">Periodo:</span>
+                    <select class="filter-dropdown">
+                        <option>Sprint actual</option>
+                        <option>Último mes</option>
+                        <option>Último trimestre</option>
+                        <option>Año actual</option>
+                        <option>Personalizado</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-title">Tareas completadas</div>
+                    <div class="metric-value">24</div>
+                    <div class="metric-delta delta-positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>32% vs. sprint anterior</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-title">Bugs pendientes</div>
+                    <div class="metric-value">8</div>
+                    <div class="metric-delta delta-negative">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>14% vs. sprint anterior</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-title">Eficiencia del equipo</div>
+                    <div class="metric-value">86%</div>
+                    <div class="metric-delta delta-positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>5% vs. sprint anterior</span>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-title">Tiempo medio de resolución</div>
+                    <div class="metric-value">2.3 días</div>
+                    <div class="metric-delta delta-positive">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>0.5 días vs. sprint anterior</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reports-row">
+                <div class="report-card" style="flex: 2;">
+                    <div class="report-card-header">
+                        <div class="report-card-title">Progreso del sprint</div>
+                        <div class="report-card-actions">
+                            <div class="report-card-action"><i class="fas fa-sync-alt"></i></div>
+                            <div class="report-card-action"><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="chart-container">
+                            <canvas id="burndownChart"></canvas>
+                        </div>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #0052cc;"></div>
+                                <span>Ideal</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #36b37e;"></div>
+                                <span>Real</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: rgba(0, 82, 204, 0.15);"></div>
+                                <span>Proyección</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-card" style="flex: 1;">
+                    <div class="report-card-header">
+                        <div class="report-card-title">Distribución de tareas</div>
+                        <div class="report-card-actions">
+                            <div class="report-card-action"><i class="fas fa-sync-alt"></i></div>
+                            <div class="report-card-action"><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="chart-container">
+                            <canvas id="taskDistributionChart"></canvas>
+                        </div>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #36b37e;"></div>
+                                <span>Completadas (52%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #0052cc;"></div>
+                                <span>En progreso (32%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #5e6c84;"></div>
+                                <span>Por hacer (16%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reports-row">
+                <div class="report-card" style="flex: 1;">
+                    <div class="report-card-header">
+                        <div class="report-card-title">Carga de trabajo por usuario</div>
+                        <div class="report-card-actions">
+                            <div class="report-card-action"><i class="fas fa-sync-alt"></i></div>
+                            <div class="report-card-action"><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="chart-container">
+                            <canvas id="workloadChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-card" style="flex: 1;">
+                    <div class="report-card-header">
+                        <div class="report-card-title">Actividad reciente</div>
+                        <div class="report-card-actions">
+                            <div class="report-card-action"><i class="fas fa-sync-alt"></i></div>
+                            <div class="report-card-action"><i class="fas fa-ellipsis-v"></i></div>
+                        </div>
+                    </div>
+                    <div class="report-card-body">
+                        <div class="task-activity-list">
+                            <div class="activity-item">
+                                <div class="activity-avatar" style="background-color: #0052cc;">MS</div>
+                                <div class="activity-content">
+                                    <div class="activity-header">
+                                        <div class="activity-user">Miguel Sánchez</div>
+                                        <div class="activity-time">Hace 2h</div>
+                                    </div>
+                                    <div class="activity-description">
+                                        Completó la tarea <span class="activity-task">Diseño de interfaz de usuario</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-avatar" style="background-color: #00b8d9;">AL</div>
+                                <div class="activity-content">
+                                    <div class="activity-header">
+                                        <div class="activity-user">Ana López</div>
+                                        <div class="activity-time">Hace 3h</div>
+                                    </div>
+                                    <div class="activity-description">
+                                        Comentó en <span class="activity-task">API de autenticación</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-avatar" style="background-color: #ff5630;">JD</div>
+                                <div class="activity-content">
+                                    <div class="activity-header">
+                                        <div class="activity-user">Juan Díaz</div>
+                                        <div class="activity-time">Hace 5h</div>
+                                    </div>
+                                    <div class="activity-description">
+                                        Reportó un bug en <span class="activity-task">Sistema de notificaciones</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-avatar" style="background-color: #36b37e;">CR</div>
+                                <div class="activity-content">
+                                    <div class="activity-header">
+                                        <div class="activity-user">Carlos Rodríguez</div>
+                                        <div class="activity-time">Hace 6h</div>
+                                    </div>
+                                    <div class="activity-description">
+                                        Asignó <span class="activity-task">Optimización de rendimiento</span> a Miguel Sánchez
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-avatar" style="background-color: #ffab00;">LM</div>
+                                <div class="activity-content">
+                                    <div class="activity-header">
+                                        <div class="activity-user">Laura Martínez</div>
+                                        <div class="activity-time">Hace 1d</div>
+                                    </div>
+                                    <div class="activity-description">
+                                        Actualizó el estado de <span class="activity-task">Integración con servicios de terceros</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-card-header">
+                    <div class="report-card-title">Tareas en progreso</div>
+                    <div class="report-card-actions">
+                        <div class="report-card-action"><i class="fas fa-sync-alt"></i></div>
+                        <div class="report-card-action"><i class="fas fa-ellipsis-v"></i></div>
+                    </div>
+                </div>
+                <div class="report-card-body">
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Tarea</th>
+                                    <th>Responsable</th>
+                                    <th>Fecha límite</th>
+                                    <th>Progreso</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Optimización de rendimiento</td>
+                                    <td>Miguel Sánchez</td>
+                                    <td>1 Mar, 2025</td>
+                                    <td>85%</td>
+                                    <td><span class="status-badge status-pending">En progreso</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Integración con API de pagos</td>
+                                    <td>Ana López</td>
+                                    <td>10 Mar, 2025</td>
+                                    <td>42%</td>
+                                    <td><span class="status-badge status-pending">En progreso</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Sistema de notificaciones</td>
+                                    <td>Juan Díaz</td>
+                                    <td>5 Mar, 2025</td>
+                                    <td>25%</td>
+                                    <td><span class="status-badge status-delayed">Retrasado</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Pruebas de seguridad</td>
+                                    <td>Carlos Rodríguez</td>
+                                    <td>15 Mar, 2025</td>
+                                    <td>10%</td>
+                                    <td><span class="status-badge status-pending">En progreso</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Documentación de API</td>
+                                    <td>Laura Martínez</td>
+                                    <td>20 Mar, 2025</td>
+                                    <td>65%</td>
+                                    <td><span class="status-badge status-pending">En progreso</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Incluir Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</div>

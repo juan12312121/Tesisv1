@@ -1,3 +1,5 @@
+
+
 /* Sidebar */
 .sidebar {
     width: 240px;
@@ -5,6 +7,7 @@
     box-shadow: 1px 0 0 0 #dfe1e6;
     overflow-y: auto;
     z-index: 5;
+    height: 100vh;
 }
 
 .sidebar-section {

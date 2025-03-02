@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router'; // Import RouterLink if needed for standalone components
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,
-  imports: [],
+  standalone: true,  // Declare this component as standalone
+  imports: [RouterLink],  // Import RouterLink to handle routing for standalone components
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrls: ['./navbar.component.css']  // Fix 'styleUrl' to 'styleUrls'
 })
 export class NavbarComponent {
-
+  // Your logic here (if needed)
 }
