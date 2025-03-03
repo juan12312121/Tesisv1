@@ -239,17 +239,7 @@
     margin-bottom: 28px;
 }
 
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
 
-.checkbox-container input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: #2563eb;
-}
 
 .forgot-password {
     color: #2563eb;
