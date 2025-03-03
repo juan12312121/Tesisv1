@@ -1,0 +1,153 @@
+ <!-- Contenedor Kanban -->
+ <div class="kanban-container">
+    <!-- Iteramos sobre las columnas -->
+    <div class="kanban-column" *ngFor="let column of columns">
+      <div class="column-header">
+        <div class="column-title">
+          <span>{{ column.title }}</span>
+          <span class="column-count">{{ column.tasks.length }}</span>
+        </div>
+        <div class="column-actions">
+          <div class="column-action"><i class="fas fa-ellipsis-v"></i></div>
+        </div>
+      </div>
+      <!-- Contenedor de tarjetas con drag & drop -->
+      <div class="column-cards" 
+           id="{{ column.id }}"
+           cdkDropList 
+           [cdkDropListData]="column.tasks" 
+           [cdkDropListConnectedTo]="getConnectedListIds(column)"
+           (cdkDropListDropped)="onTaskDrop($event)">
+        <div class="task-card" *ngFor="let task of column.tasks" cdkDrag [cdkDragData]="task">
+          <div class="task-card-header">
+            <div class="task-badges">
+              <div class="task-badge" 
+                   [ngClass]="{'badge-story': task.type === 'Story', 'badge-task': task.type === 'Task', 'badge-bug': task.type === 'Bug'}">
+                {{ task.type }}
+              </div>
+              <div *ngIf="task.priority" class="task-badge badge-priority">
+                Prioridad: {{ task.priority }}
+              </div>
+            </div>
+            <div class="task-title">{{ task.title }}</div>
+            <div class="task-id">{{ task.id }}</div>
+          </div>
+          <div class="task-card-body">
+            <div class="task-description">{{ task.description }}</div>
+          </div>
+          <div class="task-card-footer">
+            <div class="task-assignee">
+              <div class="assignee-avatar">{{ task.assignee }}</div>
+            </div>
+            <div class="task-due">
+              <span><i class="fas fa-calendar-alt"></i></span>
+              <span>{{ task.dueDate }}</span>
+            </div>
+          </div>
+        </div>
+        <!-- Botón para agregar tarea a esta columna -->
+        <div class="add-card-btn" (click)="openModal(column)">
+          <span><i class="fas fa-plus"></i></span>
+          <span>Añadir tarea</span>
+        </div>
+      </div>
+    </div>
+    <!-- Sección para añadir nueva columna de forma inline -->
+    <div class="add-column">
+      <!-- Si no se está agregando, mostramos el botón para iniciar el proceso -->
+      <div *ngIf="!addingColumn" class="add-column-btn" (click)="toggleAddColumn()">
+        <span><i class="fas fa-plus"></i></span>
+        <span>Añadir columna</span>
+      </div>
+      <!-- Formulario inline para ingresar el título de la nueva columna -->
+      <div *ngIf="addingColumn" class="add-column-form">
+        <input
+          type="text"
+          [(ngModel)]="newColumnName"
+          placeholder="Título de la columna"
+        />
+        <div class="add-column-actions">
+          <button class="button button-primary" (click)="saveNewColumn()">Guardar</button>
+          <button class="button button-secondary" (click)="toggleAddColumn()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Modal para crear tarea -->
+<div class="modal" *ngIf="modalVisible">
+<div class="modal-content">
+  <div class="modal-header">
+    <h2 class="modal-title">Crear nueva tarea</h2>
+    <button class="modal-close" (click)="closeModal()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="modal-body">
+    <form #taskForm="ngForm">
+      <div class="form-row">
+        <div class="form-col">
+          <div class="form-group">
+            <label class="form-label" for="task-title">Título</label>
+            <input type="text" class="form-control" id="task-title" name="title" ngModel placeholder="Título de la tarea" required>
+          </div>
+        </div>
+        <div class="form-col">
+          <div class="form-group">
+            <label class="form-label" for="task-id">ID</label>
+            <input type="text" class="form-control" id="task-id" name="id" ngModel placeholder="MOB-XXX" required>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="task-description">Descripción</label>
+        <textarea class="form-control" id="task-description" name="description" ngModel rows="3" placeholder="Descripción detallada de la tarea"></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-col">
+          <div class="form-group">
+            <label class="form-label" for="task-type">Tipo</label>
+            <select class="form-control form-select" id="task-type" name="type" ngModel>
+              <option value="Story">Story</option>
+              <option value="Task">Tarea</option>
+              <option value="Bug">Bug</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-col">
+          <div class="form-group">
+            <label class="form-label" for="task-priority">Prioridad</label>
+            <select class="form-control form-select" id="task-priority" name="priority" ngModel>
+              <option value="none">Normal</option>
+              <option value="Alta">Alta</option>
+              <option value="Media">Media</option>
+              <option value="Baja">Baja</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-col">
+          <div class="form-group">
+            <label class="form-label" for="task-assignee">Asignado a</label>
+            <select class="form-control form-select" id="task-assignee" name="assignee" ngModel>
+              <option value="MS">Miguel Sánchez (MS)</option>
+              <option value="JD">Juan Díaz (JD)</option>
+              <option value="AL">Ana López (AL)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-col">
+          <div class="form-group">
+            <label class="form-label" for="task-due-date">Fecha límite</label>
+            <input type="date" class="form-control" id="task-due-date" name="dueDate" ngModel>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button class="button button-secondary" (click)="closeModal()">Cancelar</button>
+    <button class="button button-primary" (click)="addTask(taskForm.value)">Guardar tarea</button>
+  </div>
+</div>
+</div>

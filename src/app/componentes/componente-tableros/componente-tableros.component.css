@@ -1,0 +1,405 @@
+.kanban-container {
+    display: flex;
+    height: calc(100vh - 240px);
+    gap: 16px;
+    padding-bottom: 16px;
+    overflow-x: auto;
+}
+
+.kanban-column {
+    flex: 0 0 300px;
+    background-color:#f0f2f5;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+
+.column-header {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid  #dfe1e6;
+}
+
+.column-title {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.column-count {
+    background-color: rgba(9, 30, 66, 0.08);
+    border-radius: 3px;
+    padding: 0px 6px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.column-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.column-action {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #5e6c84;
+}
+
+.column-action:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: #172b4d
+}
+
+.column-cards {
+    padding: 8px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.task-card {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow:  0 1px 3px rgba(0, 0, 0, 0.12);
+    margin-bottom: 8px;
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s;
+    user-select: none;
+}
+
+.task-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 5px rgba(9, 30, 66, 0.2);
+}
+
+.task-card:active {
+    cursor: grabbing;
+}
+
+.task-card-header {
+    padding: 12px 12px 8px;
+    border-bottom: 1px solid #dfe1e6;
+}
+
+.task-badges {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.task-badge {
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-bug {
+    background-color: rgba(255, 86, 48, 0.1);
+    color:  #ff5630;
+}
+
+.badge-story {
+    background-color: rgba(54, 179, 126, 0.1);
+    color:  #36b37e;
+}
+
+.badge-task {
+    background-color: rgba(66, 82, 110, 0.1);
+    color: #253858;
+}
+
+.badge-priority {
+    background-color: rgba(255, 171, 0, 0.1);
+    color: #ff5630;
+}
+
+.task-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #172b4d;
+}
+
+.task-id {
+    font-size: 12px;
+    color: #5e6c84;
+    margin-bottom: 8px;
+}
+
+.task-card-body {
+    padding: 8px 12px;
+}
+
+.task-description {
+    font-size: 13px;
+    color: #5e6c84;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.task-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px 12px;
+}
+
+.task-assignee {
+    display: flex;
+    align-items: center;
+}
+
+.assignee-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #0052cc;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-due {
+    font-size: 11px;
+    color: #5e6c84;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.task-due.overdue {
+    color: #ff5630;
+}
+
+
+.add-card-btn {
+    padding: 8px;
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgba(9, 30, 66, 0.04);
+    color: #5e6c84;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-card-btn:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: #172b4d;
+}
+
+.add-column-btn {
+    flex: 0 0 300px;
+    padding: 12px 16px;
+    border-radius: 3px;
+    background-color: rgba(9, 30, 66, 0.04);
+    color: #5e6c84;
+    font-size: 14px;
+    cursor: pointer;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.add-column-btn:hover {
+    background-color: rgba(9, 30, 66, 0.08);
+    color: #172b4d;
+}
+
+/* Modal para crear tarea */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(9, 30, 66, 0.54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 3px;
+    width: 600px;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(9, 30, 66, 0.2);
+    position: relative;
+}
+
+.modal-header {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid  #dfe1e6;
+    position: relative;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #5e6c84;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.modal-close:hover {
+    background-color:  #f0f2f5;
+    color: #172b4d;
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid  #dfe1e6;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #0052cc;
+}
+
+.form-select {
+    appearance: none;
+    padding-right: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235e6c84' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+.modal-footer {
+    padding: 16px 24px 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+}
+
+.form-col {
+    flex: 1;
+}
+
+/* Estilos para la barra de arrastre */
+.dragging {
+    opacity: 0.8;
+    transform: rotate(2deg);
+    z-index: 9999;
+}
+
+.drop-target {
+    background-color:  #e6f0ff;
+    border: 2px dashed #0052cc;
+}
+
+
+
+.add-column {
+    margin: 10px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    width: 250px;
+  }
+  .add-column-btn {
+    cursor: pointer;
+    color: #253858;
+    font-weight: bold;
+  }
+  .add-column-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .add-column-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+  .add-column-actions {
+    display: flex;
+    gap: 5px;
+  }
+  .add-column-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .button-primary {
+    background-color: #0079bf;
+    color: #fff;
+  }
+  .button-secondary {
+    background-color: #ccc;
+    color: #333;
+  }
