@@ -304,17 +304,3 @@
     text-decoration: underline;
 }
 
-.error-message {
-    display: none;
-    background-color: #f8d7da;
-    color: #721c24;
-    padding: 12px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    text-align: center;
-}
-
-.error-message i {
-    margin-right: 8px;
-}
