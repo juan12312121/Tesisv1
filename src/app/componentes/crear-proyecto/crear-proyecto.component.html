@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<button class="button button-primary" id="create-project-btn" (click)="abrirModal()">
+    <i class="fas fa-plus fa-lg"></i>
+    <span>Crear proyecto</span>
+</button>
+
+<!-- Modal con la clase 'show' basada en modalVisible -->
+<div class="modal" [ngClass]="{'show': modalVisible}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">Crear nuevo proyecto</h2>
+            <button class="modal-close" id="close-modal-btn" (click)="cerrarModal()">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Contenido del formulario -->
+            <div class="form-group">
+                <label for="nombreProyecto" class="form-label">Nombre del proyecto</label>
+                <input type="text" id="nombreProyecto" class="form-control" placeholder="Ingrese nombre del proyecto"/>
+            </div>
+            
+            <div class="form-group">
+                <label for="categoria" class="form-label">Categoría principal</label>
+                <select id="categoria" class="form-control form-select" (change)="cambiarCategoria($event)">
+                    <option value="" disabled selected>Seleccione una categoría</option>
+                    <option value="software">Desarrollo de Software</option>
+                    <option value="marketing">Marketing Digital</option>
+                    <option value="design">Diseño</option>
+                    <option value="research">Investigación y Desarrollo</option>
+                    <option value="business">Gestión Empresarial</option>
+                </select>
+            </div>
+            
+            <!-- Subcategorías de Desarrollo de Software - mostrar cuando categoria === 'software' -->
+            <div class="form-group subcategory-group" *ngIf="categoriaSeleccionada === 'software'">
+                <label for="tipoSoftware" class="form-label">Tipo de desarrollo</label>
+                <select id="tipoSoftware" class="form-control form-select">
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="web"><i class="fas fa-globe"></i> Aplicación Web</option>
+                    <option value="mobile-android"><i class="fab fa-android"></i> App Android</option>
+                    <option value="mobile-ios"><i class="fab fa-apple"></i> App iOS</option>
+                    <option value="mobile-cross"><i class="fas fa-mobile-alt"></i> App Multiplataforma</option>
+                    <option value="desktop-windows"><i class="fab fa-windows"></i> Software Windows</option>
+                    <option value="desktop-mac"><i class="fab fa-apple"></i> Software macOS</option>
+                    <option value="desktop-linux"><i class="fab fa-linux"></i> Software Linux</option>
+                    <option value="api-rest"><i class="fas fa-server"></i> API REST</option>
+                    <option value="api-graphql"><i class="fas fa-project-diagram"></i> API GraphQL</option>
+                    <option value="database"><i class="fas fa-database"></i> Base de Datos</option>
+                    <option value="microservices"><i class="fas fa-cubes"></i> Microservicios</option>
+                </select>
+            </div>
+            
+            <!-- Subcategorías de Marketing Digital -->
+            <div class="form-group subcategory-group" *ngIf="categoriaSeleccionada === 'marketing'">
+                <label for="tipoMarketing" class="form-label">Tipo de marketing</label>
+                <select id="tipoMarketing" class="form-control form-select">
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="seo"><i class="fas fa-search"></i> SEO</option>
+                    <option value="sem"><i class="fas fa-ad"></i> SEM / Publicidad</option>
+                    <option value="social-media"><i class="fas fa-hashtag"></i> Redes Sociales</option>
+                    <option value="email"><i class="fas fa-envelope"></i> Email Marketing</option>
+                    <option value="content"><i class="fas fa-pen-fancy"></i> Marketing de Contenidos</option>
+                    <option value="influencer"><i class="fas fa-users"></i> Marketing de Influencers</option>
+                    <option value="analytics"><i class="fas fa-chart-line"></i> Análisis de Datos</option>
+                </select>
+            </div>
+            
+            <!-- Subcategorías de Diseño -->
+            <div class="form-group subcategory-group" *ngIf="categoriaSeleccionada === 'design'">
+                <label for="tipoDiseno" class="form-label">Tipo de diseño</label>
+                <select id="tipoDiseno" class="form-control form-select">
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="ui"><i class="fas fa-desktop"></i> Diseño UI</option>
+                    <option value="ux"><i class="fas fa-user"></i> Diseño UX</option>
+                    <option value="graphic"><i class="fas fa-palette"></i> Diseño Gráfico</option>
+                    <option value="branding"><i class="fas fa-copyright"></i> Branding</option>
+                    <option value="product"><i class="fas fa-box"></i> Diseño de Producto</option>
+                    <option value="illustration"><i class="fas fa-paint-brush"></i> Ilustración</option>
+                    <option value="motion"><i class="fas fa-video"></i> Motion Graphics</option>
+                </select>
+            </div>
+            
+            <!-- Subcategorías de Investigación -->
+            <div class="form-group subcategory-group" *ngIf="categoriaSeleccionada === 'research'">
+                <label for="tipoInvestigacion" class="form-label">Tipo de investigación</label>
+                <select id="tipoInvestigacion" class="form-control form-select">
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="market"><i class="fas fa-chart-pie"></i> Investigación de Mercado</option>
+                    <option value="user"><i class="fas fa-user-check"></i> Investigación de Usuarios</option>
+                    <option value="scientific"><i class="fas fa-flask"></i> Investigación Científica</option>
+                    <option value="competitive"><i class="fas fa-trophy"></i> Análisis de Competencia</option>
+                    <option value="prototyping"><i class="fas fa-drafting-compass"></i> Prototipado</option>
+                    <option value="innovation"><i class="fas fa-lightbulb"></i> Innovación</option>
+                </select>
+            </div>
+            
+            <!-- Subcategorías de Gestión Empresarial -->
+            <div class="form-group subcategory-group" *ngIf="categoriaSeleccionada === 'business'">
+                <label for="tipoNegocio" class="form-label">Tipo de gestión</label>
+                <select id="tipoNegocio" class="form-control form-select">
+                    <option value="" disabled selected>Seleccione un tipo</option>
+                    <option value="strategy"><i class="fas fa-chess"></i> Planificación Estratégica</option>
+                    <option value="operations"><i class="fas fa-cogs"></i> Operaciones</option>
+                    <option value="finance"><i class="fas fa-dollar-sign"></i> Finanzas</option>
+                    <option value="hr"><i class="fas fa-user-tie"></i> Recursos Humanos</option>
+                    <option value="sales"><i class="fas fa-handshake"></i> Ventas</option>
+                    <option value="crm"><i class="fas fa-users"></i> CRM</option>
+                    <option value="consulting"><i class="fas fa-comments-dollar"></i> Consultoría</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="descripcionProyecto" class="form-label">Descripción (opcional)</label>
+                <textarea id="descripcionProyecto" class="form-control" rows="3" placeholder="Breve descripción del proyecto"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="button button-secondary" id="cancel-btn" (click)="cerrarModal()">Cancelar</button>
+            <button class="button button-primary" id="save-btn">Guardar proyecto</button>
+        </div>
+    </div>
+</div>

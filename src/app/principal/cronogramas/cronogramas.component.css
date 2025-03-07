@@ -296,9 +296,6 @@ footer {
 }
 
 
-
-
-
 /* Media queries para mejorar la respuesta en diferentes tamaños de pantalla */
 @media (max-width: 768px) {
     .project-header {

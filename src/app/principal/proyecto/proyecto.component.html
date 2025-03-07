@@ -10,10 +10,7 @@
         <div class="main-content">
             <div class="page-header">
                 <h1 class="page-title">Proyectos</h1>
-                <button class="button button-primary" id="create-project-btn">
-                    <i class="fas fa-plus"></i>
-                    <span>Crear proyecto</span>
-                </button>
+              <app-crear-proyecto></app-crear-proyecto>
             </div>
             
             <div class="filter-bar">
@@ -340,63 +337,4 @@
     </div>
     
     <!-- Modal Crear Proyecto -->
-    <div class="modal" id="create-project-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title">Crear nuevo proyecto</h2>
-                <button class="modal-close" id="close-modal-btn"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label class="form-label">Nombre del proyecto *</label>
-                    <input type="text" class="form-control" placeholder="Ej. Nueva plataforma de ventas">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Clave del proyecto *</label>
-                    <input type="text" class="form-control" placeholder="Ej. NPV">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Tipo de proyecto *</label>
-                    <select class="form-control form-select">
-                        <option>Software</option>
-                        <option>Marketing</option>
-                        <option>Negocio</option>
-                        <option>Otro</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Descripción</label>
-                    <textarea class="form-control" rows="4" placeholder="Descripción breve del proyecto..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Fecha de inicio</label>
-                    <input type="date" class="form-control">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Fecha de finalización estimada</label>
-                    <input type="date" class="form-control">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Líder del proyecto</label>
-                    <select class="form-control form-select">
-                        <option>María Sánchez (tú)</option>
-                        <option>Juan Díaz</option>
-                        <option>Ana Rodríguez</option>
-                        <option>Carlos López</option>
-                    </select>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="button button-secondary" id="cancel-btn">Cancelar</button>
-                <button class="button button-primary">Crear proyecto</button>
-            </div>
-        </div>
-    </div>
-    
-</div>
+ 
