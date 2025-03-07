@@ -1,340 +1,508 @@
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <div class="container">
-  
+    <!-- Navbar -->
     <app-navbar></app-navbar>
-
+  
     <div class="app-container">
-    <app-aside></app-aside>
-        
-        <div class="main-content">
-            <div class="page-header">
-                <h1 class="page-title">Proyectos</h1>
-              <app-crear-proyecto></app-crear-proyecto>
-            </div>
-            
-            <div class="filter-bar">
-                <div class="filter-group">
-                    <span class="filter-label">Ver:</span>
-                    <select class="filter-select">
-                        <option>Todos los proyectos</option>
-                        <option>Mis proyectos</option>
-                        <option>Proyectos recientes</option>
-                        <option>Favoritos</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <span class="filter-label">Tipo:</span>
-                    <select class="filter-select">
-                        <option>Todos los tipos</option>
-                        <option>Software</option>
-                        <option>Marketing</option>
-                        <option>Negocio</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <span class="filter-label">Estado:</span>
-                    <select class="filter-select">
-                        <option>Todos</option>
-                        <option>En progreso</option>
-                        <option>En espera</option>
-                        <option>Completados</option>
-                    </select>
-                </div>
-                
-                <div class="view-toggle">
-                    <button class="view-button active"><i class="fas fa-th-large"></i></button>
-                    <button class="view-button"><i class="fas fa-list"></i></button>
-                </div>
-            </div>
-            
-            <div class="projects-grid">
-                <!-- Proyecto 1 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-avatar" style="background-color: #0052cc;">
-                            AM
-                        </div>
-                        <div class="project-info">
-                            <div class="project-name">App Móvil</div>
-                            <div class="project-key">MOB-2023</div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-body">
-                        <div class="status-section">
-                            <div class="status-row">
-                                <div class="status-label">Estado del proyecto</div>
-                                <div class="status-count">65% completado</div>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 65%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="status-row">
-                            <div class="status-label">Tareas</div>
-                            <div class="status-count">15 / 23</div>
-                        </div>
-                        
-                        <div class="sprint-section">
-                            <div class="sprint-header">Sprint actual</div>
-                            <div class="sprint-info">
-                                <div class="sprint-dates">25 Feb - 10 Mar</div>
-                                <div class="sprint-status active">Activo</div>
-                            </div>
-                            
-                            <div class="sprint-tasks">
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge bug">Bug</div>
-                                        <div class="task-number">MOB-345</div>
-                                    </div>
-                                    <div class="task-title">Corregir error de login</div>
-                                </div>
-                                
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge story">Story</div>
-                                        <div class="task-number">MOB-351</div>
-                                    </div>
-                                    <div class="task-title">Implementar notificaciones</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-footer">
-                        <div class="team-members">
-                            <div class="member-avatar">JD</div>
-                            <div class="member-avatar">MS</div>
-                            <div class="member-avatar">AR</div>
-                            <div class="member-avatar">+2</div>
-                        </div>
-                        <div class="project-due">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Vence: 15 Mar</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Proyecto 2 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-avatar" style="background-color: #ff5630;">
-                            WEB
-                        </div>
-                        <div class="project-info">
-                            <div class="project-name">Rediseño Web</div>
-                            <div class="project-key">WEB-2023</div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-body">
-                        <div class="status-section">
-                            <div class="status-row">
-                                <div class="status-label">Estado del proyecto</div>
-                                <div class="status-count">42% completado</div>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 42%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="status-row">
-                            <div class="status-label">Tareas</div>
-                            <div class="status-count">8 / 19</div>
-                        </div>
-                        
-                        <div class="sprint-section">
-                            <div class="sprint-header">Sprint actual</div>
-                            <div class="sprint-info">
-                                <div class="sprint-dates">25 Feb - 10 Mar</div>
-                                <div class="sprint-status active">Activo</div>
-                            </div>
-                            
-                            <div class="sprint-tasks">
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge task">Task</div>
-                                        <div class="task-number">WEB-127</div>
-                                    </div>
-                                    <div class="task-title">Optimización SEO</div>
-                                </div>
-                                
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge story">Story</div>
-                                        <div class="task-number">WEB-132</div>
-                                    </div>
-                                    <div class="task-title">Rediseño página principal</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-footer">
-                        <div class="team-members">
-                            <div class="member-avatar">CL</div>
-                            <div class="member-avatar">FM</div>
-                            <div class="member-avatar">TP</div>
-                        </div>
-                        <div class="project-due overdue">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Vence: 10 Mar</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-avatar" style="background-color: #36b37e;">
-                            API
-                        </div>
-                        <div class="project-info">
-                            <div class="project-name">API Microservicios</div>
-                            <div class="project-key">API-2023</div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-body">
-                        <div class="status-section">
-                            <div class="status-row">
-                                <div class="status-label">Estado del proyecto</div>
-                                <div class="status-count">78% completado</div>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 78%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="status-row">
-                            <div class="status-label">Tareas</div>
-                            <div class="status-count">18 / 23</div>
-                        </div>
-                        
-                        <div class="sprint-section">
-                            <div class="sprint-header">Sprint actual</div>
-                            <div class="sprint-info">
-                                <div class="sprint-dates">25 Feb - 10 Mar</div>
-                                <div class="sprint-status active">Activo</div>
-                            </div>
-                            
-                            <div class="sprint-tasks">
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge bug">Bug</div>
-                                        <div class="task-number">API-089</div>
-                                    </div>
-                                    <div class="task-title">Corrección validación JWT</div>
-                                </div>
-                                
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge task">Task</div>
-                                        <div class="task-number">API-092</div>
-                                    </div>
-                                    <div class="task-title">Documentación Swagger</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-footer">
-                        <div class="team-members">
-                            <div class="member-avatar">RG</div>
-                            <div class="member-avatar">MS</div>
-                            <div class="member-avatar">JT</div>
-                            <div class="member-avatar">+1</div>
-                        </div>
-                        <div class="project-due">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Vence: 20 Mar</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Proyecto 4 -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-avatar" style="background-color: #00b8d9;">
-                            MKT
-                        </div>
-                        <div class="project-info">
-                            <div class="project-name">Campaña Marketing Q1</div>
-                            <div class="project-key">MKT-2023</div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-body">
-                        <div class="status-section">
-                            <div class="status-row">
-                                <div class="status-label">Estado del proyecto</div>
-                                <div class="status-count">93% completado</div>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 93%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="status-row">
-                            <div class="status-label">Tareas</div>
-                            <div class="status-count">14 / 15</div>
-                        </div>
-                        
-                        <div class="sprint-section">
-                            <div class="sprint-header">Sprint actual</div>
-                            <div class="sprint-info">
-                                <div class="sprint-dates">25 Feb - 10 Mar</div>
-                                <div class="sprint-status active">Activo</div>
-                            </div>
-                            
-                            <div class="sprint-tasks">
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge task">Task</div>
-                                        <div class="task-number">MKT-056</div>
-                                    </div>
-                                    <div class="task-title">Reporte analíticas</div>
-                                </div>
-                                
-                                <div class="sprint-task">
-                                    <div class="task-info">
-                                        <div class="task-badge story">Story</div>
-                                        <div class="task-number">MKT-058</div>
-                                    </div>
-                                    <div class="task-title">Revisión resultados finales</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-footer">
-                        <div class="team-members">
-                            <div class="member-avatar">LV</div>
-                            <div class="member-avatar">SC</div>
-                            <div class="member-avatar">PM</div>
-                        </div>
-                        <div class="project-due">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Vence: 12 Mar</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pagination">
-                <div class="pagination-item"><i class="fas fa-chevron-left"></i></div>
-                <div class="pagination-item active">1</div>
-                <div class="pagination-item">2</div>
-                <div class="pagination-item">3</div>
-                <div class="pagination-item"><i class="fas fa-chevron-right"></i></div>
-            </div>
+      <!-- Aside -->
+      <app-aside></app-aside>
+  
+      <div class="main-content">
+        <div class="page-header">
+          <h1 class="page-title">Proyectos</h1>
+          <app-crear-proyecto></app-crear-proyecto>
         </div>
+  
+        <div class="filter-bar">
+          <div class="filter-group">
+            <span class="filter-label">Ver:</span>
+            <select class="filter-select">
+              <option>Todos los proyectos</option>
+              <option>Mis proyectos</option>
+              <option>Proyectos recientes</option>
+              <option>Favoritos</option>
+            </select>
+          </div>
+  
+          <div class="filter-group">
+            <span class="filter-label">Tipo:</span>
+            <select class="filter-select">
+              <option>Todos los tipos</option>
+              <option>Software</option>
+              <option>Marketing</option>
+              <option>Negocio</option>
+            </select>
+          </div>
+  
+          <div class="filter-group">
+            <span class="filter-label">Estado:</span>
+            <select class="filter-select">
+              <option>Todos los estados</option>
+              <option>En progreso</option>
+              <option>En espera</option>
+              <option>Completado</option>
+              <option>Atrasado</option>
+            </select>
+          </div>
+  
+          <div class="view-toggle">
+            <!-- Botón para vista de lista -->
+            <button class="view-button" [ngClass]="{'active': !isGridView}" (click)="showListView()">
+              <i class="fas fa-list"></i>
+            </button>
+            <!-- Botón para vista de cuadrícula -->
+            <button class="view-button" [ngClass]="{'active': isGridView}" (click)="showGridView()">
+              <i class="fas fa-th-large"></i>
+            </button>
+          </div>
+        </div>
+  
+        <!-- Vista de Lista (se muestra cuando isGridView es false) -->
+        <div class="projects-list" *ngIf="!isGridView">
+          <!-- Proyecto 1: App Móvil -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #0052cc;">AM</div>
+              <div class="project-info">
+                <div class="project-name">App Móvil</div>
+                <div class="project-key">AM-123</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-metrics">
+                <div class="status-section">
+                  <div class="status-row">
+                    <span class="status-label">Progreso Total</span>
+                    <span class="status-count">65%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 65%;"></div>
+                  </div>
+                </div>
+                <div class="sprint-section">
+                  <div class="sprint-header">Sprint 4: Implementación de Pagos</div>
+                  <div class="sprint-info">
+                    <div class="sprint-dates">Mar 2 - Mar 16, 2025</div>
+                    <div class="sprint-status active">Activo</div>
+                  </div>
+                  <div class="sprint-tasks">
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge story">Historia</div>
+                        <div class="task-number">AM-456</div>
+                      </div>
+                      <div class="task-title">Integración con pasarela de pago</div>
+                    </div>
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge bug">Bug</div>
+                        <div class="task-number">AM-457</div>
+                      </div>
+                      <div class="task-title">Corregir error en validación de formularios</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">JD</div>
+                <div class="member-avatar">AM</div>
+                <div class="member-avatar">RK</div>
+                <div class="member-avatar">+2</div>
+              </div>
+              <div class="project-due">
+                <i class="far fa-clock"></i>
+                <span>Vence en 21 días</span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Proyecto 2: Rediseño Web -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #00B8D9;">RW</div>
+              <div class="project-info">
+                <div class="project-name">Rediseño Web</div>
+                <div class="project-key">RW-345</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-metrics">
+                <div class="status-section">
+                  <div class="status-row">
+                    <span class="status-label">Progreso Total</span>
+                    <span class="status-count">42%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 42%; background-color: #FFC400;"></div>
+                  </div>
+                </div>
+                <div class="sprint-section">
+                  <div class="sprint-header">Sprint 2: Responsive Design</div>
+                  <div class="sprint-info">
+                    <div class="sprint-dates">Feb 20 - Mar 5, 2025</div>
+                    <div class="sprint-status upcoming">Próximo</div>
+                  </div>
+                  <div class="sprint-tasks">
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge task">Tarea</div>
+                        <div class="task-number">RW-201</div>
+                      </div>
+                      <div class="task-title">Adaptar diseño para tablets</div>
+                    </div>
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge story">Historia</div>
+                        <div class="task-number">RW-202</div>
+                      </div>
+                      <div class="task-title">Optimizar carga de imágenes</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">LM</div>
+                <div class="member-avatar">SJ</div>
+                <div class="member-avatar">TP</div>
+              </div>
+              <div class="project-due overdue">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>3 días de retraso</span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Proyecto 3: API Microservicios -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #36B37E;">MS</div>
+              <div class="project-info">
+                <div class="project-name">API Microservicios</div>
+                <div class="project-key">MS-789</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-metrics">
+                <div class="status-section">
+                  <div class="status-row">
+                    <span class="status-label">Progreso Total</span>
+                    <span class="status-count">78%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                  </div>
+                </div>
+                <div class="sprint-section">
+                  <div class="sprint-header">Sprint 6: Implementación Cache</div>
+                  <div class="sprint-info">
+                    <div class="sprint-dates">Mar 8 - Mar 22, 2025</div>
+                    <div class="sprint-status active">Activo</div>
+                  </div>
+                  <div class="sprint-tasks">
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge story">Historia</div>
+                        <div class="task-number">MS-621</div>
+                      </div>
+                      <div class="task-title">Configurar Redis</div>
+                    </div>
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge task">Tarea</div>
+                        <div class="task-number">MS-622</div>
+                      </div>
+                      <div class="task-title">Implementar política de caché</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">BK</div>
+                <div class="member-avatar">JD</div>
+                <div class="member-avatar">MS</div>
+                <div class="member-avatar">+3</div>
+              </div>
+              <div class="project-due">
+                <i class="far fa-clock"></i>
+                <span>Vence en 15 días</span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Proyecto 4: Campaña Marketing Q1 -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #FF8B00;">MK</div>
+              <div class="project-info">
+                <div class="project-name">Campaña Marketing Q1</div>
+                <div class="project-key">MK-456</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-metrics">
+                <div class="status-section">
+                  <div class="status-row">
+                    <span class="status-label">Progreso Total</span>
+                    <span class="status-count">92%</span>
+                  </div>
+                  <div class="progress-bar">
+                    <div class="progress-fill" style="width: 92%;"></div>
+                  </div>
+                </div>
+                <div class="sprint-section">
+                  <div class="sprint-header">Sprint 1: Análisis de Resultados</div>
+                  <div class="sprint-info">
+                    <div class="sprint-dates">Mar 1 - Mar 14, 2025</div>
+                    <div class="sprint-status active">Activo</div>
+                  </div>
+                  <div class="sprint-tasks">
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge task">Tarea</div>
+                        <div class="task-number">MK-321</div>
+                      </div>
+                      <div class="task-title">Análisis de campañas previas</div>
+                    </div>
+                    <div class="sprint-task">
+                      <div class="task-info">
+                        <div class="task-badge task">Tarea</div>
+                        <div class="task-number">MK-322</div>
+                      </div>
+                      <div class="task-title">Planificación de estrategia</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">EL</div>
+                <div class="member-avatar">SR</div>
+                <div class="member-avatar">MJ</div>
+              </div>
+              <div class="project-due">
+                <i class="far fa-clock"></i>
+                <span>Vence en 7 días</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Vista de Cuadrícula (se muestra cuando isGridView es true) -->
+        <div class="projects-grid" *ngIf="isGridView">
+          <!-- Proyecto 1: App Móvil -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #0052cc;">AM</div>
+              <div class="project-info">
+                <div class="project-name">App Móvil</div>
+                <div class="project-key">AM-123</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="status-section">
+                <div class="status-row">
+                  <span class="status-label">Progreso Total</span>
+                  <span class="status-count">65%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 65%;"></div>
+                </div>
+              </div>
+              <div class="sprint-section">
+                <div class="sprint-header">Sprint Actual</div>
+                <div class="sprint-info">
+                  <div class="sprint-dates">Mar 2 - Mar 16, 2025</div>
+                  <div class="sprint-status active">Activo</div>
+                </div>
+                <div class="sprint-tasks">
+                  <div class="sprint-task">
+                    <div class="task-info">
+                      <div class="task-badge story">Historia</div>
+                      <div class="task-number">4</div>
+                    </div>
+                    <div class="task-title">Integración de pagos</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">JD</div>
+                <div class="member-avatar">AM</div>
+                <div class="member-avatar">RK</div>
+                <div class="member-avatar">+2</div>
+              </div>
+              <div class="project-due">
+                <i class="far fa-clock"></i>
+                <span>Vence en 21 días</span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Proyecto 2: Rediseño Web -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #00B8D9;">RW</div>
+              <div class="project-info">
+                <div class="project-name">Rediseño Web</div>
+                <div class="project-key">RW-345</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="status-section">
+                <div class="status-row">
+                  <span class="status-label">Progreso Total</span>
+                  <span class="status-count">42%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 42%; background-color: #FFC400;"></div>
+                </div>
+              </div>
+              <div class="sprint-section">
+                <div class="sprint-header">Sprint Actual</div>
+                <div class="sprint-info">
+                  <div class="sprint-dates">Feb 20 - Mar 5, 2025</div>
+                  <div class="sprint-status upcoming">Próximo</div>
+                </div>
+                <div class="sprint-tasks">
+                  <div class="sprint-task">
+                    <div class="task-info">
+                      <div class="task-badge task">Tarea</div>
+                      <div class="task-number">2</div>
+                    </div>
+                    <div class="task-title">UI Responsive</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">LM</div>
+                <div class="member-avatar">SJ</div>
+                <div class="member-avatar">TP</div>
+              </div>
+              <div class="project-due overdue">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>3 días de retraso</span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Proyecto 3: API Microservicios -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #36B37E;">MS</div>
+              <div class="project-info">
+                <div class="project-name">API Microservicios</div>
+                <div class="project-key">MS-789</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="status-section">
+                <div class="status-row">
+                  <span class="status-label">Progreso Total</span>
+                  <span class="status-count">78%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 78%;"></div>
+                </div>
+              </div>
+              <div class="sprint-section">
+                <div class="sprint-header">Sprint Actual</div>
+                <div class="sprint-info">
+                  <div class="sprint-dates">Mar 8 - Mar 22, 2025</div>
+                  <div class="sprint-status active">Activo</div>
+                </div>
+                <div class="sprint-tasks">
+                  <div class="sprint-task">
+                    <div class="task-info">
+                      <div class="task-badge story">Historia</div>
+                      <div class="task-number">3</div>
+                    </div>
+                    <div class="task-title">Caché y optimización</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">BK</div>
+                <div class="member-avatar">JD</div>
+                <div class="member-avatar">MS</div>
+                <div class="member-avatar">+3</div>
+              </div>
+              <div class="project-due">
+                <i class="far fa-clock"></i>
+                <span>Vence en 15 días</span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Proyecto 4: Campaña Marketing Q1 -->
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-avatar" style="background-color: #FF8B00;">MK</div>
+              <div class="project-info">
+                <div class="project-name">Campaña Marketing Q1</div>
+                <div class="project-key">MK-456</div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="status-section">
+                <div class="status-row">
+                  <span class="status-label">Progreso Total</span>
+                  <span class="status-count">92%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 92%;"></div>
+                </div>
+              </div>
+              <div class="sprint-section">
+                <div class="sprint-header">Sprint Actual</div>
+                <div class="sprint-info">
+                  <div class="sprint-dates">Mar 1 - Mar 14, 2025</div>
+                  <div class="sprint-status active">Activo</div>
+                </div>
+                <div class="sprint-tasks">
+                  <div class="sprint-task">
+                    <div class="task-info">
+                      <div class="task-badge task">Tarea</div>
+                      <div class="task-number">2</div>
+                    </div>
+                    <div class="task-title">Análisis de resultados</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-footer">
+              <div class="team-members">
+                <div class="member-avatar">EL</div>
+                <div class="member-avatar">SR</div>
+                <div class="member-avatar">MJ</div>
+              </div>
+              <div class="project-due">
+                <i class="far fa-clock"></i>
+                <span>Vence en 7 días</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Paginación -->
+        <div class="pagination">
+          <div class="pagination-item"><i class="fas fa-chevron-left"></i></div>
+          <div class="pagination-item active">1</div>
+          <div class="pagination-item">2</div>
+          <div class="pagination-item">3</div>
+          <div class="pagination-item"><i class="fas fa-chevron-right"></i></div>
+        </div>
+      </div>
     </div>
-    
-    <!-- Modal Crear Proyecto -->
- 
+  </div>
+  

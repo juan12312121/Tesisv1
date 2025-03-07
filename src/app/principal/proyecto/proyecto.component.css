@@ -24,14 +24,12 @@ body {
 }
 
 
-
 /* Main layout */
 .app-container {
     display: flex;
     flex: 1;
     overflow: hidden;
 }
-
 
 /* Main content */
 .main-content {
@@ -66,7 +64,14 @@ body {
     border: none;
 }
 
+.button-primary {
+    background-color: #0052cc;
+    color: white;
+}
 
+.button-primary:hover {
+    background-color: #0046ad;
+}
 
 /* Filter bar */
 .filter-bar {
@@ -403,72 +408,4 @@ body {
 .pagination-item.active {
     background-color: #0052cc;
     color: white;
-}
-
-/* Modal */
-
-.button-secondary {
-    background-color: rgba(9, 30, 66, 0.04);
-    color: #111827;
-}
-
-.button-secondary:hover {
-    background-color: rgba(9, 30, 66, 0.08);
-}
-
-@media (max-width: 1024px) {
-    .sidebar {
-        width: 56px;
-    }
-
-    .sidebar-heading,
-    .sidebar-menu-item span {
-        display: none;
-    }
-
-    .sidebar-menu-item {
-        justify-content: center;
-        padding: 12px;
-    }
-
-    .sidebar-menu-item-icon {
-        width: auto;
-        font-size: 18px;
-    }
-
-    .logo-container {
-        width: 56px;
-    }
-
-    .logo span {
-        display: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-item {
-        display: none;
-    }
-
-    .nav-item:first-child {
-        display: flex;
-    }
-
-    .search-container {
-        flex: 1;
-        max-width: 300px;
-    }
-
-    .filter-bar {
-        overflow-x: auto;
-        padding: 0 8px;
-    }
-
-    .filter-group {
-        flex-shrink: 0;
-    }
 }
