@@ -1,0 +1,254 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<app-navbar></app-navbar>
+
+<div class="contenedor">
+    <div class="app-container">
+        <app-aside></app-aside>
+      <div class="container">
+        <header>
+          <h1>Cronograma de Proyectos</h1>
+          <div class="app-controls">
+            <button class="btn btn-secondary">Exportar PDF</button>
+          </div>
+        </header>
+        
+        <div class="timeline-container">
+          <div class="filters">
+            <div class="filter-group">
+              <select id="filter-project">
+                <option value="all">Todos los Proyectos</option>
+                <option value="app">Aplicación Principal</option>
+                <option value="api">API Backend</option>
+                <option value="web">Portal Web</option>
+                <option value="mobile">App Móvil</option>
+              </select>
+              
+              <select id="filter-assignee">
+                <option value="all">Todos los Usuarios</option>
+                <option value="user1">Carlos Ramírez</option>
+                <option value="user2">Ana López</option>
+                <option value="user3">Miguel Santos</option>
+                <option value="user4">Laura Martínez</option>
+                <option value="user5">Javier Rodríguez</option>
+              </select>
+              
+              <select id="filter-status">
+                <option value="all">Todos los Estados</option>
+                <option value="pending">Pendiente</option>
+                <option value="progress">En Progreso</option>
+                <option value="completed">Completado</option>
+                <option value="delayed">Retrasado</option>
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <input type="date" id="filter-start-date" value="2025-03-01">
+              <span>hasta</span>
+              <input type="date" id="filter-end-date" value="2025-06-30">
+              <button class="btn btn-primary" id="apply-filter">Aplicar</button>
+            </div>
+          </div>
+          
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #0052cc;"></div>
+              <span>Desarrollo</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #6554c0;"></div>
+              <span>Diseño</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #ff8b00;"></div>
+              <span>Pruebas</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #00875a;"></div>
+              <span>Despliegue</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #e5493a;"></div>
+              <span>Hito</span>
+            </div>
+          </div>
+          
+          <!-- Aplicación Principal -->
+          <div class="project-section" data-project="app">
+            <div class="project-header">
+              <div class="project-title">Aplicación Principal</div>
+              <div class="project-meta">
+                <span>Progreso: 45%</span>
+                <span>Fecha límite: 15 Jun 2025</span>
+                <span>Líder: Carlos Ramírez</span>
+              </div>
+            </div>
+            
+            <div class="timeline">
+              <div class="timeline-header">
+                <div class="timeline-header-cell" style="width: 250px; text-align: left;">Tarea / Responsable</div>
+                <div class="timeline-header-cell">Mar 2025</div>
+                <div class="timeline-header-cell">Abr 2025</div>
+                <div class="timeline-header-cell">May 2025</div>
+                <div class="timeline-header-cell">Jun 2025</div>
+                <div class="timeline-header-cell">Jul 2025</div>
+                <div class="timeline-header-cell">Ago 2025</div>
+                <div class="timeline-header-cell">Mar 2025</div>
+                <div class="timeline-header-cell">Abr 2025</div>
+                <div class="timeline-header-cell">May 2025</div>
+                <div class="timeline-header-cell">Jun 2025</div>
+                <div class="timeline-header-cell">Jul 2025</div>
+                <div class="timeline-header-cell">Ago 2025</div>
+                <div class="timeline-header-cell">Mar 2025</div>
+                <div class="timeline-header-cell">Abr 2025</div>
+                <div class="timeline-header-cell">May 2025</div>
+                <div class="timeline-header-cell">Abr 2025</div>
+           
+              </div>
+              
+              <!-- Fila 1 -->
+              <div class="timeline-row">
+                <div class="timeline-task-info">
+                  <div class="task-name">Investigación de mercado</div>
+                  <div class="task-assignee">
+                    <span class="user-avatar">CR</span>Carlos Ramírez
+                  </div>
+                  <div class="task-progress">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                  </div>
+                </div>
+                <div class="timeline-cells">
+                  <div class="timeline-cell">
+                    <div class="task-bar task-development" style="width: 85px; left: 5px;">Completado</div>
+                  </div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                </div>
+              </div>
+              
+              <!-- Fila 2 -->
+              <div class="timeline-row">
+                <div class="timeline-task-info">
+                  <div class="task-name">Diseño de UI/UX</div>
+                  <div class="task-assignee">
+                    <span class="user-avatar">AL</span>Ana López
+                  </div>
+                  <div class="task-progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                  </div>
+                </div>
+                <div class="timeline-cells">
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell">
+                    <div class="task-bar task-design" style="width: 180px; left: 5px;">En progreso</div>
+                  </div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                </div>
+              </div>
+              
+              <!-- Fila 3 -->
+              <div class="timeline-row">
+                <div class="timeline-task-info">
+                  <div class="task-name">Desarrollo backend</div>
+                  <div class="task-assignee">
+                    <span class="user-avatar">MS</span>Miguel Santos
+                  </div>
+                  <div class="task-progress">
+                    <div class="progress-bar" style="width: 40%;"></div>
+                  </div>
+                </div>
+                <div class="timeline-cells">
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell">
+                    <div class="task-bar task-development" style="width: 180px; left: 5px;">En progreso</div>
+                  </div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                </div>
+              </div>
+              
+              <!-- Fila 4 -->
+              <div class="timeline-row">
+                <div class="timeline-task-info">
+                  <div class="task-name">Pruebas de integración</div>
+                  <div class="task-assignee">
+                    <span class="user-avatar">LM</span>Laura Martínez
+                  </div>
+                  <div class="task-progress">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                <div class="timeline-cells">
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell">
+                    <div class="task-bar task-testing" style="width: 90px; left: 5px;">Pendiente</div>
+                  </div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                </div>
+              </div>
+              
+              <!-- Fila 5 -->
+              <div class="timeline-row">
+                <div class="timeline-task-info">
+                  <div class="task-name">Despliegue v1.0</div>
+                  <div class="task-assignee">
+                    <span class="user-avatar">JR</span>Javier Rodríguez
+                  </div>
+                  <div class="task-progress">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                <div class="timeline-cells">
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell">
+                    <div class="task-bar task-deployment" style="width: 90px; left: 5px;">Pendiente</div>
+                  </div>
+                  <div class="timeline-cell"></div>
+                </div>
+              </div>
+              
+              <!-- Fila 6 - Hito -->
+              <div class="timeline-row">
+                <div class="timeline-task-info">
+                  <div class="task-name">Lanzamiento Oficial</div>
+                  <div class="task-assignee">
+                    <span class="user-avatar">CR</span>Carlos Ramírez
+                  </div>
+                  <div class="task-progress">
+                    <div class="progress-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+                <div class="timeline-cells">
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell"></div>
+                  <div class="timeline-cell">
+                    <div class="task-bar task-milestone" style="width: 30px; left: 35px;">Hito</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        
+        </div>
+      </div>
+    </div>
+  </div>

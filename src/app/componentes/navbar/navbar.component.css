@@ -8,6 +8,8 @@ header {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     height: 56px;
     z-index: 10;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .logo-container {
