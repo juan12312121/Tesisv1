@@ -1,29 +1,13 @@
 import { CdkDragDrop, DragDropModule, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 import { Component } from '@angular/core';
-
-interface Task {
-  id: string;
-  title: string;
-  description: string;
-  type: string;
-  priority?: string;
-  assignee: string;
-  dueDate: string;
-}
-
-interface Column {
-  id: string;
-  title: string;
-  tasks: Task[];
-}
+import { FormsModule } from '@angular/forms';
+import { Column, CrearTareasComponent, Task } from '../crear-tareas/crear-tareas.component';
 
 @Component({
   selector: 'app-componente-tableros',
   standalone: true,
-  imports: [CommonModule, DragDropModule,FormsModule], // Se agregó DragDropModule
+  imports: [CommonModule, DragDropModule, FormsModule, CrearTareasComponent],
   templateUrl: './componente-tableros.component.html',
   styleUrls: ['./componente-tableros.component.css']
 })
@@ -62,30 +46,18 @@ export class ComponenteTablerosComponent {
 
   openModal(column?: Column) {
     this.selectedColumn = column ? column : this.columns[0];
+    console.log('openModal llamado. Columna seleccionada:', this.selectedColumn);
     this.modalVisible = true;
+    console.log('modalVisible establecido en:', this.modalVisible);
   }
-
+  
   closeModal() {
+    console.log('closeModal llamado.');
     this.modalVisible = false;
     this.selectedColumn = null;
+    console.log('modalVisible:', this.modalVisible, 'selectedColumn:', this.selectedColumn);
   }
-
-  addTask(formValues: { title: string; id: string; description: string; type: string; priority?: string; assignee: string; dueDate: string; }) {
-    if (!this.selectedColumn) return;
-
-    const newTask: Task = {
-      id: formValues.id || `MOB-${this.selectedColumn.tasks.length + 356}`,
-      title: formValues.title,
-      description: formValues.description,
-      type: formValues.type,
-      priority: formValues.priority,
-      assignee: formValues.assignee,
-      dueDate: formValues.dueDate
-    };
-    this.selectedColumn.tasks.push(newTask);
-    this.closeModal();
-  }
-
+  
   onTaskDrop(event: CdkDragDrop<Task[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

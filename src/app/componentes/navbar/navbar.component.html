@@ -1,27 +1,52 @@
 <header>
-    <div class="logo-container">
-        <div class="logo">
-            <span><i class="fas fa-sync-alt"></i></span>
-            <span>tasktracker</span>
-        </div>
+    <div class="logo-container" data-tooltip="Inicio">
+      <div class="logo">
+        <span><i class="fas fa-sync-alt"></i></span>
+        <span>tasktracker</span>
+      </div>
     </div>
     
     <div class="nav-container">
-        <div class="nav-item" routerLink="/proyectos" routerLinkActive="active">Proyectos</div>
-        <div class="nav-item" routerLink="/tableros" routerLinkActive="active">Tableros</div>
-        <div class="nav-item" routerLink="/mis-tareas" routerLinkActive="active">Mis tareas</div>
-        <div class="nav-item" routerLink="/informes" routerLinkActive="active">Informes</div>
-        
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Buscar...">
-            <span class="search-icon"><i class="fas fa-search"></i></span>
-        </div>
+      <div class="nav-item" routerLink="/proyectos" routerLinkActive="active" data-tooltip="Proyectos">
+        <i class="fas fa-folder-open"></i>
+        <span>Proyectos</span>
+      </div>
+      <div class="nav-item" routerLink="/tableros" routerLinkActive="active" data-tooltip="Tableros">
+        <i class="fas fa-th-large"></i>
+        <span>Tableros</span>
+      </div>
+      <div class="nav-item" routerLink="/mis-tareas" routerLinkActive="active" data-tooltip="Mis tareas">
+        <i class="fas fa-tasks"></i>
+        <span>Mis tareas</span>
+      </div>
+      <div class="nav-item" routerLink="/informes" routerLinkActive="active" data-tooltip="Informes">
+        <i class="fas fa-chart-bar"></i>
+        <span>Informes</span>
+      </div>
+      
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Buscar...">
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+      </div>
     </div>
     
     <div class="user-actions">
-        <div class="action-icon"><i class="fas fa-plus"></i></div>
-        <div class="action-icon"><i class="fas fa-bell"></i></div>
-        <div class="action-icon"><i class="fas fa-question-circle"></i></div>
+      <div class="action-icon" data-tooltip="Nuevo"><i class="fas fa-plus"></i></div>
+      <div class="action-icon" data-tooltip="Notificaciones"><i class="fas fa-bell"></i></div>
+      <div class="action-icon" data-tooltip="Ayuda"><i class="fas fa-question-circle"></i></div>
+      <!-- Dropdown de perfil -->
+      <div class="profile-container">
         <div class="avatar">MS</div>
+        <div class="profile-dropdown">
+          <ul>
+            <li><a routerLink="/perfil">Mi perfil</a></li>
+            <li><a routerLink="/configuracion">Configuración</a></li>
+            <li><a routerLink="/ayuda">Ayuda</a></li>
+            <li class="divider"></li>
+            <li><button class="logout-btn" (click)="logout()">Cerrar sesión</button></li>
+          </ul>
+        </div>
+      </div>
     </div>
-</header>
+  </header>
+  

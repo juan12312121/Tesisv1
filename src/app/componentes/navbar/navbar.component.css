@@ -1,5 +1,4 @@
-
-/* Header styles */
+/* Header Styles */
 header {
     background-color: #253858;
     padding: 0;
@@ -9,37 +8,34 @@ header {
     height: 56px;
     z-index: 10;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-}
-
-.logo-container {
+  }
+  
+  .logo-container {
     width: 240px;
     display: flex;
     align-items: center;
     padding: 0 16px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.15);
-}
-
-.logo {
+  }
+  
+  .logo {
     color: white;
     font-size: 22px;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
-}
-
-
-.nav-container {
+  }
+  
+  .nav-container {
     display: flex;
     height: 100%;
     align-items: center;
     flex: 1;
-}
-
-
-.nav-item {
+  }
+  
+  .nav-item {
     color: rgba(255, 255, 255, 0.7);
     height: 100%;
     padding: 0 16px;
@@ -49,22 +45,26 @@ header {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
-}
-
-
-.nav-item:hover,
-.nav-item.active {
+  }
+  
+  .nav-item i {
+    margin-right: 6px;
+    font-size: 16px;
+  }
+  
+  .nav-item:hover,
+  .nav-item.active {
     color: white;
     background-color: rgba(255, 255, 255, 0.1);
-}
-
-.search-container {
+  }
+  
+  .search-container {
     margin-left: 8px;
     position: relative;
     width: 240px;
-}
-
-.search-input {
+  }
+  
+  .search-input {
     width: 100%;
     padding: 8px 12px 8px 32px;
     border-radius: 3px;
@@ -73,41 +73,40 @@ header {
     color: white;
     font-size: 14px;
     transition: background-color 0.2s;
-}
-
-.search-input::placeholder {
+  }
+  
+  .search-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
-}
-
-.search-input:focus {
+  }
+  
+  .search-input:focus {
     outline: none;
     background-color: white;
     color: #161a2d;
-}
-
-.search-icon {
+  }
+  
+  .search-icon {
     position: absolute;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
     color: rgba(255, 255, 255, 0.5);
     font-size: 14px;
-}
-
-.search-input:focus + .search-icon {
+  }
+  
+  .search-input:focus + .search-icon {
     color: #5e6c84;
-}
-
-
-.user-actions {
+  }
+  
+  .user-actions {
     display: flex;
     align-items: center;
     margin-left: auto;
     height: 100%;
     padding-right: 16px;
-}
-
-.action-icon {
+  }
+  
+  .action-icon {
     color: rgba(255, 255, 255, 0.7);
     width: 32px;
     height: 32px;
@@ -119,14 +118,20 @@ header {
     cursor: pointer;
     font-size: 18px;
     transition: all 0.2s;
-}
-
-.action-icon:hover {
+  }
+  
+  .action-icon:hover {
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-}
-
-.avatar {
+  }
+  
+  /* Dropdown de Perfil */
+  .profile-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .avatar {
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -138,4 +143,95 @@ header {
     justify-content: center;
     margin-left: 16px;
     cursor: pointer;
-}
+  }
+  
+  /* Se oculta por defecto y se muestra al hacer hover */
+  .profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    width: 200px;
+    display: none;
+    z-index: 100;
+  }
+  
+  .profile-container:hover .profile-dropdown {
+    display: block;
+  }
+  
+  .profile-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profile-dropdown li {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #161a2d;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .profile-dropdown li:hover {
+    background-color: #f4f5f7;
+  }
+  
+  .profile-dropdown .divider {
+    height: 1px;
+    background-color: #dfe1e6;
+    margin: 4px 0;
+  }
+  
+  .profile-dropdown a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .logout-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    cursor: pointer;
+    color: #161a2d;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .logout-btn:hover {
+    text-decoration: underline;
+  }
+  
+  /* Tooltips */
+  [data-tooltip] {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 20;
+  }
+  
+  [data-tooltip]:hover::after {
+    opacity: 1;
+  }
+  

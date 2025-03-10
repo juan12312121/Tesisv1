@@ -1,13 +1,24 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router'; // Import RouterLink if needed for standalone components
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
-  standalone: true,  // Declare this component as standalone
-  imports: [RouterLink],  // Import RouterLink to handle routing for standalone components
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']  // Fix 'styleUrl' to 'styleUrls'
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  // Your logic here (if needed)
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logout() {
+    // Aquí coloca la lógica para cerrar sesión, como limpiar tokens y redireccionar.
+    console.log('Cerrando sesión...');
+    // Ejemplo: this.authService.logout();
+    // Luego, redirige a la página de login.
+  }
 }
