@@ -170,3 +170,133 @@
     }
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(9, 30, 66, 0.54);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 16px rgba(9, 30, 66, 0.25);
+  }
+  
+  .modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #dfe1e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #6b778c;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-footer {
+    padding: 16px 20px;
+    border-top: 1px solid #dfe1e6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .input-group {
+    margin-bottom: 16px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .input-group input,
+  .input-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #dfe1e6;
+    border-radius: 3px;
+    font-size: 14px;
+  }
+  
+  .input-group input:focus,
+  .input-group select:focus {
+    border-color: #4c9aff;
+    outline: none;
+  }
+  
+  .invitees-list {
+    margin-top: 24px;
+  }
+  
+  .invitees-list h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  
+  .chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 36px;
+    padding: 4px;
+    border: 1px solid #dfe1e6;
+    border-radius: 3px;
+  }
+  
+  .chip {
+    display: flex;
+    align-items: center;
+    background-color: #f4f5f7;
+    border-radius: 3px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .chip-label {
+    margin-right: 8px;
+  }
+  
+  .chip-role {
+    background-color: #dfe1e6;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin-right: 8px;
+    font-size: 11px;
+  }
+  
+  .chip-remove {
+    cursor: pointer;
+    color: #6b778c;
+  }
+  
+  .chip-remove:hover {
+    color: #172b4d;
+  }
