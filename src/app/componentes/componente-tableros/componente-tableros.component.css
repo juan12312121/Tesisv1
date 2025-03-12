@@ -8,20 +8,19 @@
 
 .kanban-column {
     flex: 0 0 300px;
-    background-color:#f0f2f5;
+    background-color: #ECF0F1; /* Gris muy claro */
     border-radius: 3px;
     display: flex;
     flex-direction: column;
     max-height: 100%;
 }
 
-
 .column-header {
     padding: 12px 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid  #dfe1e6;
+    border-bottom: 1px solid #ECF0F1; /* Gris muy claro */
 }
 
 .column-title {
@@ -30,10 +29,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    color: #2C3E50; /* Azul oscuro */
 }
 
 .column-count {
-    background-color: rgba(9, 30, 66, 0.08);
+    background-color: rgba(44, 62, 80, 0.08); /* Azul oscuro con transparencia */
     border-radius: 3px;
     padding: 0px 6px;
     font-size: 12px;
@@ -55,12 +55,12 @@
     border-radius: 3px;
     cursor: pointer;
     font-size: 14px;
-    color: #5e6c84;
+    color: #7F8C8D; /* Gris claro */
 }
 
 .column-action:hover {
-    background-color: rgba(9, 30, 66, 0.08);
-    color: #172b4d
+    background-color: rgba(44, 62, 80, 0.08); /* Azul oscuro con transparencia */
+    color: #2C3E50; /* Azul oscuro */
 }
 
 .column-cards {
@@ -72,7 +72,7 @@
 .task-card {
     background-color: white;
     border-radius: 3px;
-    box-shadow:  0 1px 3px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.12); /* Azul oscuro con transparencia */
     margin-bottom: 8px;
     cursor: grab;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -81,7 +81,7 @@
 
 .task-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 3px 5px rgba(9, 30, 66, 0.2);
+    box-shadow: 0 3px 5px rgba(44, 62, 80, 0.2); /* Azul oscuro con transparencia */
 }
 
 .task-card:active {
@@ -90,7 +90,7 @@
 
 .task-card-header {
     padding: 12px 12px 8px;
-    border-bottom: 1px solid #dfe1e6;
+    border-bottom: 1px solid #ECF0F1; /* Gris muy claro */
 }
 
 .task-badges {
@@ -108,35 +108,35 @@
 }
 
 .badge-bug {
-    background-color: rgba(255, 86, 48, 0.1);
-    color:  #ff5630;
+    background-color: rgba(26, 188, 156, 0.1); /* Verde turquesa con transparencia */
+    color: #1ABC9C; /* Verde turquesa */
 }
 
 .badge-story {
-    background-color: rgba(54, 179, 126, 0.1);
-    color:  #36b37e;
+    background-color: rgba(52, 152, 219, 0.1); /* Azul con transparencia */
+    color: #3498DB; /* Azul */
 }
 
 .badge-task {
-    background-color: rgba(66, 82, 110, 0.1);
-    color: #253858;
+    background-color: rgba(44, 62, 80, 0.1); /* Azul oscuro con transparencia */
+    color: #2C3E50; /* Azul oscuro */
 }
 
 .badge-priority {
-    background-color: rgba(255, 171, 0, 0.1);
-    color: #ff5630;
+    background-color: rgba(52, 152, 219, 0.1); /* Azul con transparencia */
+    color: #3498DB; /* Azul */
 }
 
 .task-title {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 4px;
-    color: #172b4d;
+    color: #2C3E50; /* Azul oscuro */
 }
 
 .task-id {
     font-size: 12px;
-    color: #5e6c84;
+    color: #7F8C8D; /* Gris claro */
     margin-bottom: 8px;
 }
 
@@ -146,7 +146,7 @@
 
 .task-description {
     font-size: 13px;
-    color: #5e6c84;
+    color: #7F8C8D; /* Gris claro */
     margin-bottom: 12px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -170,7 +170,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: #0052cc;
+    background-color: #1ABC9C; /* Verde turquesa */
     color: white;
     font-size: 10px;
     font-weight: 600;
@@ -181,23 +181,22 @@
 
 .task-due {
     font-size: 11px;
-    color: #5e6c84;
+    color: #7F8C8D; /* Gris claro */
     display: flex;
     align-items: center;
     gap: 4px;
 }
 
 .task-due.overdue {
-    color: #ff5630;
+    color: #1ABC9C; /* Verde turquesa */
 }
-
 
 .add-card-btn {
     padding: 8px;
     border-radius: 3px;
     text-align: center;
-    background-color: rgba(9, 30, 66, 0.04);
-    color: #5e6c84;
+    background-color: rgba(44, 62, 80, 0.04); /* Azul oscuro con transparencia */
+    color: #7F8C8D; /* Gris claro */
     font-size: 13px;
     cursor: pointer;
     margin-top: 8px;
@@ -208,16 +207,16 @@
 }
 
 .add-card-btn:hover {
-    background-color: rgba(9, 30, 66, 0.08);
-    color: #172b4d;
+    background-color: rgba(44, 62, 80, 0.08); /* Azul oscuro con transparencia */
+    color: #2C3E50; /* Azul oscuro */
 }
 
 .add-column-btn {
     flex: 0 0 300px;
     padding: 12px 16px;
     border-radius: 3px;
-    background-color: rgba(9, 30, 66, 0.04);
-    color: #5e6c84;
+    background-color: rgba(44, 62, 80, 0.04); /* Azul oscuro con transparencia */
+    color: #7F8C8D; /* Gris claro */
     font-size: 14px;
     cursor: pointer;
     height: fit-content;
@@ -229,11 +228,9 @@
 }
 
 .add-column-btn:hover {
-    background-color: rgba(9, 30, 66, 0.08);
-    color: #172b4d;
+    background-color: rgba(44, 62, 80, 0.08); /* Azul oscuro con transparencia */
+    color: #2C3E50; /* Azul oscuro */
 }
-
-
 
 /* Estilos para la barra de arrastre */
 .dragging {
@@ -243,52 +240,57 @@
 }
 
 .drop-target {
-    background-color:  #e6f0ff;
-    border: 2px dashed #0052cc;
+    background-color: rgba(26, 188, 156, 0.1); /* Verde turquesa con transparencia */
+    border: 2px dashed #1ABC9C; /* Verde turquesa */
 }
-
-
 
 .add-column {
     margin: 10px;
     padding: 10px;
-    border: 1px dashed #ccc;
+    border: 1px dashed #ECF0F1; /* Gris muy claro */
     border-radius: 4px;
-    background-color: #f7f7f7;
+    background-color: #ECF0F1; /* Gris muy claro */
     width: 250px;
-  }
-  .add-column-btn {
+}
+
+.add-column-btn {
     cursor: pointer;
-    color: #253858;
+    color: #2C3E50; /* Azul oscuro */
     font-weight: bold;
-  }
-  .add-column-form {
+}
+
+.add-column-form {
     display: flex;
     flex-direction: column;
-  }
-  .add-column-form input {
+}
+
+.add-column-form input {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #ECF0F1; /* Gris muy claro */
     border-radius: 3px;
     margin-bottom: 5px;
     font-size: 14px;
-  }
-  .add-column-actions {
+}
+
+.add-column-actions {
     display: flex;
     gap: 5px;
-  }
-  .add-column-actions button {
+}
+
+.add-column-actions button {
     padding: 5px 10px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     font-size: 14px;
-  }
-  .button-primary {
-    background-color: #0079bf;
+}
+
+.button-primary {
+    background-color: #1ABC9C; /* Verde turquesa */
     color: #fff;
-  }
-  .button-secondary {
-    background-color: #ccc;
-    color: #333;
-  }
+}
+
+.button-secondary {
+    background-color: #ECF0F1; /* Gris muy claro */
+    color: #2C3E50; /* Azul oscuro */
+}

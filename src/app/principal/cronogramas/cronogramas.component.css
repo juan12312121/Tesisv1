@@ -1,201 +1,320 @@
-.contenedor {
-    background-color: #f4f5f7;
-    color: #333;
-    line-height: 1.4s;
-    padding: 20px;
+/* Variables globales */
+
+  /* Reseteo y estilos base */
+  * {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.container {
-    max-width: 1800px;
+    line-height: 1.5;
+  }
+  
+  /* Contenedor principal */
+  .contenedor {
+    background-color: #f4f5f7;
+    color: #34495E;
+    min-height: 100vh;
+  }
+  
+  /* Layout principal */
+  .app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 1655px;
     margin: 0 auto;
     width: 100%;
-}
-
-.app-container {
-    display: flex;
-    flex: 0;
-    overflow: hidden;
-}
-
-header {
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* Cabecera */
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
     padding-bottom: 15px;
-}
-
-header h1 {
-    margin-left: 15px;
-    margin-top: 15px;
-    color: #172b4d;
-    font-size: 1.8rem;
-}
-
-.app-controls {
+    border-bottom: 1px solid #ECF0F1;
+  }
+  
+  header h1 {
+    margin: 0;
+    color: #2C3E50;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  /* Botones y controles */
+  .app-controls {
     display: flex;
     gap: 10px;
-}
-
-.btn {
+  }
+  
+  .btn {
     padding: 8px 16px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-    transition: background 0.3s;
-}
-
-.btn-primary {
-    background-color: #0052cc;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+  
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+  
+  .btn:active {
+    transform: translateY(1px);
+  }
+  
+  .btn-primary {
+    background-color: #1ABC9C;
     color: white;
-}
-
-.btn-secondary {
-    background-color: #00875a;
+  }
+  
+  .btn-primary:hover {
+    background-color: #17a589;
+  }
+  
+  .btn-secondary {
+    background-color: #3498DB;
     color: white;
-}
-
-.btn-primary:hover {
-    background-color: #0047b3;
-}
-
-.btn-secondary:hover {
-    background-color: #007050;
-}
-
-.filters {
+  }
+  
+  .btn-secondary:hover {
+    background-color: #2980B9;
+  }
+  
+  /* Contenedor de la línea de tiempo */
+  .timeline-container {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow:  0 1px 3px rgba(44, 62, 80, 0.12);
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  /* Filtros */
+  .filters {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     flex-wrap: wrap;
     gap: 15px;
-}
-
-.filter-group {
+  }
+  
+  .filter-group {
     display: flex;
     gap: 10px;
     align-items: center;
     flex-wrap: wrap;
-}
-
-select, input {
-    padding: 8px;
-    border: 1px solid #dfe1e6;
-    border-radius: 3px;
-}
-
-.timeline-container {
-    background-color: white;
+  }
+  
+  select, input {
+    padding: 8px 12px;
+    border: 1px solid #ECF0F1;
     border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 30px;
-    overflow-x: auto;
-}
-
-.project-section {
+    background-color: white;
+    color: #34495E;
+    font-size: 0.9rem;
+  }
+  
+  select:focus, input:focus {
+    outline: 2px solid rgba(52, 152, 219, 0.3);
+    border-color: #3498DB;
+  }
+  
+  /* Leyenda */
+  .legend {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(236, 240, 241, 0.5);
+    border-radius: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-right: 10px;
+  }
+  
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    margin-right: 6px;
+  }
+  
+  /* Sección de proyectos */
+  .project-section {
     margin-bottom: 35px;
-}
-
-.project-header {
+  }
+  
+  .project-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
-    background-color: #f4f5f7;
+    padding: 12px 15px;
+    background-color: #E8F4F8;
     border-radius: 5px;
     margin-bottom: 15px;
-    flex-wrap: wrap;
-}
-
-.project-title {
+  }
+  
+  .project-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #0052cc;
-}
-
-.project-meta {
+    color: #2C3E50;
+  }
+  
+  .project-meta {
     display: flex;
     gap: 15px;
     font-size: 0.9rem;
-    flex-wrap: wrap;
-}
-
-.timeline {
+  }
+  
+  .project-meta span {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  /* Línea de tiempo */
+  .timeline {
     position: relative;
     overflow-x: auto;
-}
-
-.timeline-header {
+    border: 1px solid #ECF0F1;
+    border-radius: 5px;
+  }
+  
+  /* Cabecera de la línea de tiempo */
+  .timeline-header {
     display: flex;
-    border-bottom: 1px solid #dfe1e6;
+    border-bottom: 1px solid #ECF0F1;
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: #f8f9fa;
     z-index: 10;
-}
-
-.timeline-header-cell {
+  }
+  
+  .timeline-header-cell {
     min-width: 90px;
-    padding: 10px;
+    padding: 12px 10px;
     text-align: center;
     font-weight: 500;
-    border-right: 1px solid #dfe1e6;
-}
-
-.timeline-row {
+    font-size: 0.9rem;
+    border-right: 1px solid #ECF0F1;
+  }
+  
+  .timeline-header-cell:first-child {
+    text-align: left;
+  }
+  
+  /* Filas de la línea de tiempo */
+  .timeline-row {
     display: flex;
-    border-bottom: 1px solid #dfe1e6;
+    border-bottom: 1px solid #ECF0F1;
     position: relative;
-}
-
-.timeline-task-info {
+    background-color: white;
+  }
+  
+  .timeline-row:hover {
+    background-color: rgba(236, 240, 241, 0.3);
+  }
+  
+  .timeline-row:last-child {
+    border-bottom: none;
+  }
+  
+  /* Información de la tarea */
+  .timeline-task-info {
     width: 250px;
-    padding: 15px 10px;
-    border-right: 1px solid #dfe1e6;
-    font-weight: 500;
+    padding: 15px;
+    border-right: 1px solid #ECF0F1;
     position: sticky;
     left: 0;
     background-color: white;
     z-index: 5;
     display: flex;
     flex-direction: column;
-}
-
-.task-name {
+  }
+  
+  .timeline-row:hover .timeline-task-info {
+    background-color: rgba(236, 240, 241, 0.3);
+  }
+  
+  .task-name {
     font-weight: 600;
     font-size: 0.95rem;
-}
-
-.task-assignee {
+    margin-bottom: 4px;
+  }
+  
+  .task-assignee {
     font-size: 0.85rem;
-    color: #666;
+    color: #7F8C8D;
     margin-top: 3px;
     display: flex;
     align-items: center;
-}
-
-.timeline-cells {
+  }
+  
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #ECF0F1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    color: #7F8C8D;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+  
+  .task-progress {
+    height: 5px;
+    background-color: #ECF0F1;
+    margin-top: 8px;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #1ABC9C;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Celdas de la línea de tiempo */
+  .timeline-cells {
     display: flex;
     flex-grow: 1;
-}
-
-.timeline-cell {
+  }
+  
+  .timeline-cell {
     min-width: 90px;
     height: 60px;
-    border-right: 1px solid #dfe1e6;
+    border-right: 1px solid #ECF0F1;
     position: relative;
-}
-
-.task-bar {
+  }
+  
+  /* Barras de tareas */
+  .task-bar {
     position: absolute;
     height: 30px;
     top: 15px;
-    border-radius: 3px;
+    border-radius: 4px;
     color: white;
     display: flex;
     align-items: center;
@@ -203,115 +322,72 @@ select, input {
     font-size: 0.8rem;
     cursor: pointer;
     z-index: 4;
-}
-
-.task-bar:hover {
-    opacity: 0.9;
-}
-
-.task-development {
-    background-color: #0052cc;
-}
-
-.task-design {
+    box-shadow: 0 1px 3px rgba(44, 62, 80, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .task-bar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .task-development {
+    background-color:  #0052cc;
+  }
+  
+  .task-design {
     background-color: #6554c0;
-}
-
-.task-testing {
+  }
+  
+  .task-testing {
     background-color: #ff8b00;
-}
-
-.task-deployment {
-    background-color: #00875a;
-}
-
-.task-milestone {
+  }
+  
+  .task-deployment {
+    background-color:  #00875a;
+  }
+  
+  .task-milestone {
     background-color: #e5493a;
-}
-
-.user-avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: #ddd;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 5px;
-    color: #555;
-    font-size: 0.75rem;
-    font-weight: bold;
-}
-
-.task-progress {
-    height: 4px;
-    background-color: #eee;
-    margin-top: 5px;
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    background-color: #00875a;
-}
-
-.legend {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    font-size: 0.85rem;
-    margin-bottom: 5px;
-}
-
-.legend-color {
-    width: 15px;
-    height: 15px;
-    border-radius: 3px;
-    margin-right: 5px;
-}
-
-.today-marker {
+  }
+  
+  /* Marcador del día actual */
+  .today-marker {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: red;
+    background-color: #e5493a;
     z-index: 3;
-}
-
-footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #dfe1e6;
-    font-size: 0.9rem;
-    color: #777;
-}
-
-
-/* Media queries para mejorar la respuesta en diferentes tamaños de pantalla */
-@media (max-width: 768px) {
+  }
+  
+  /* Responsividad para pantallas más pequeñas */
+  @media (max-width: 768px) {
     .project-header {
-        flex-direction: column;
-        align-items: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
     }
     
     .project-meta {
-        margin-top: 10px;
+      margin-top: 10px;
+      flex-direction: column;
+      gap: 5px;
     }
     
     .filters {
-        flex-direction: column;
+      flex-direction: column;
     }
     
     .filter-group {
-        width: 100%;
+      width: 100%;
     }
-}
+    
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .app-controls {
+      margin-top: 10px;
+    }
+  }
