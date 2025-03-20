@@ -33,8 +33,11 @@
           <div class="task-id">{{ task.id }}</div>
         </div>
         <div class="task-card-body">
-          <div class="task-description">{{ task.description }}</div>
+          <div class="task-description" title="{{ task.description }}">
+            {{ task.description | truncate: 100 }}
+          </div>
         </div>
+        
         <div class="task-card-footer">
           <div class="task-assignee">
             <div class="assignee-avatar">{{ task.assignee }}</div>

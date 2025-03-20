@@ -1,275 +1,369 @@
+<!-- Font Awesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Font Awesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <div class="container">
- <app-navbar></app-navbar>
-    
-    <div class="app-container">
-        <app-aside></app-aside>
+  <app-navbar></app-navbar>
+  
+  <div class="app-container">
+    <app-aside></app-aside>
 
-        <div class="main-content">
-            <!-- Encabezado de la página -->
-            <div class="page-header">
-                <h1 class="page-title">Mis Tareas Asignadas</h1>
-                
-                <div style="display: flex; gap: 12px;">
-                    <button class="button button-secondary">
-                        <i class="fas fa-file-export"></i>
-                        <span>Exportar</span>
-                    </button>
-                    <button class="button button-primary">
-                        <i class="fas fa-plus"></i>
-                        <span>Crear tarea</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Barra de filtros -->
-            <div class="tasks-filter-bar">
-                <div class="filter-group">
-                    <div style="font-size: 14px; color: #5e6c84;">Estado:</div>
-                    <div class="filter-pill active">
-                        <span>Todas</span>
-                    </div>
-                    <div class="filter-pill">
-                        <span>Por hacer</span>
-                    </div>
-                    <div class="filter-pill">
-                        <span>En progreso</span>
-                    </div>
-                    <div class="filter-pill">
-                        <span>Finalizadas</span>
-                    </div>
-                </div>
-                
-              
-                <div class="tasks-view-toggle">
-                    <button class="view-toggle-btn active">
-                        <i class="fas fa-th-large"></i>
-                        <span>Tarjetas</span>
-                    </button>
-                    <button class="view-toggle-btn">
-                        <i class="fas fa-list"></i>
-                        <span>Lista</span>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Vista de tarjetas agrupadas -->
-            <div class="tasks-container">
-                <!-- Tareas para hoy -->
-                <div class="task-section section-today">
-                    <div class="task-section-header">
-                        <div class="section-title">
-                            <div class="section-icon"><i class="fas fa-calendar-day"></i></div>
-                            <span>Para hoy</span>
-                            <span class="section-count">3</span>
-                        </div>
-                    </div>
-                    
-                    <div class="task-list">
-                        <!-- Tarea 1 -->
-                        <div class="task-card priority-high">
-                            <div class="task-card-header">
-                                <div class="task-source">
-                                    <div class="source-badge source-jira">
-                                        <span>J</span>
-                                        <span>MOB-356</span>
-                                    </div>
-                                </div>
-                                <div class="task-badges">
-                                    <div class="task-badge badge-story">Story</div>
-                                    <div class="task-badge badge-priority">Prioridad: Alta</div>
-                                </div>
-                                <div class="task-title">Implementar notificaciones push</div>
-                                <div class="task-project">
-                                    <div class="project-avatar" style="background-color: #0052cc;">AM</div>
-                                    <span>App Móvil</span>
-                                </div>
-                            </div>
-                            <div class="task-card-body">
-                                <div class="task-description">Integrar sistema de notificaciones push para alertas en tiempo real a los usuarios.</div>
-                            </div>
-                            <div class="task-card-footer">
-                                <div class="task-status status-todo">Por hacer</div>
-                                <div class="task-due">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>Hoy</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tarea 2 -->
-                        <div class="task-card priority-medium">
-                            <div class="task-card-header">
-                                <div class="task-source">
-                                    <div class="source-badge source-trello">
-                                        <span>T</span>
-                                        <span>WEB-142</span>
-                                    </div>
-                                </div>
-                                <div class="task-badges">
-                                    <div class="task-badge badge-task">Task</div>
-                                </div>
-                                <div class="task-title">Optimizar rendimiento de carga de página</div>
-                                <div class="task-project">
-                                    <div class="project-avatar" style="background-color: #00b8d9;">WEB</div>
-                                    <span>Web</span>
-                                </div>
-                            </div>
-                            <div class="task-card-body">
-                                <div class="task-description">Mejorar los tiempos de carga de la página principal reduciendo tamaños de recursos y optimizando JavaScript.</div>
-                            </div>
-                            <div class="task-card-footer">
-                                <div class="task-status status-inprogress">En progreso</div>
-                                <div class="task-due">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>Hoy</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    
-                <!-- Tareas próximas -->
-                <div class="task-section section-upcoming">
-                    <div class="task-section-header">
-                        <div class="section-title">
-                            <div class="section-icon"><i class="fas fa-hourglass-half"></i></div>
-                            <span>Próximas</span>
-                            <span class="section-count">3</span>
-                        </div>
-                    </div>
-                    
-                    <div class="task-list">
-                        <!-- Tarea 6 -->
-                        <div class="task-card priority-medium">
-                            <div class="task-card-header">
-                                <div class="task-source">
-                                    <div class="source-badge source-jira">
-                                        <span>J</span>
-                                        <span>API-092</span>
-                                    </div>
-                                </div>
-                                <div class="task-badges">
-                                    <div class="task-badge badge-story">Story</div>
-                                </div>
-                                <div class="task-title">Implementar endpoints para gestión de archivos</div>
-                                <div class="task-project">
-                                    <div class="project-avatar" style="background-color: #6554c0;">API</div>
-                                    <span>API</span>
-                                </div>
-                            </div>
-                            <div class="task-card-body">
-                                <div class="task-description">Crear nuevos endpoints para subir, descargar y gestionar archivos desde el frontend.</div>
-                            </div>
-                            <div class="task-card-footer">
-                                <div class="task-status status-todo">Por hacer</div>
-                                <div class="task-due">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>En 2 días</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tarea 7 -->
-                        <div class="task-card priority-low">
-                            <div class="task-card-header">
-                                <div class="task-source">
-                                    <div class="source-badge source-trello">
-                                        <span>T</span>
-                                        <span>WEB-148</span>
-                                    </div>
-                                </div>
-                                <div class="task-badges">
-                                    <div class="task-badge badge-task">Task</div>
-                                </div>
-                                <div class="task-title">Actualizar documentación de componentes</div>
-                                <div class="task-project">
-                                    <div class="project-avatar" style="background-color: #00b8d9;">WEB</div>
-                                    <span>Web</span>
-                                </div>
-                            </div>
-                            <div class="task-card-body">
-                                <div class="task-description">Actualizar la documentación de los componentes UI para incluir los nuevos cambios y ejemplos de uso.</div>
-                            </div>
-                            <div class="task-card-footer">
-                                <div class="task-status status-todo">Por hacer</div>
-                                <div class="task-due">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>En 3 días</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tarea 8 -->
-                        <div class="task-card priority-medium">
-                            <div class="task-card-header">
-                                <div class="task-source">
-                                    <div class="source-badge source-jira">
-                                        <span>J</span>
-                                        <span>MOB-362</span>
-                                    </div>
-                                </div>
-                                <div class="task-badges">
-                                    <div class="task-badge badge-story">Story</div>
-                                </div>
-                                <div class="task-title">Integrar analíticas de usuario</div>
-                                <div class="task-project">
-                                    <div class="project-avatar" style="background-color: #0052cc;">AM</div>
-                                    <span>App Móvil</span>
-                                </div>
-                            </div>
-                            <div class="task-card-body">
-                                <div class="task-description">Implementar sistema de analíticas para seguimiento de comportamiento de usuarios en la aplicación.</div>
-                            </div>
-                            <div class="task-card-footer">
-                                <div class="task-status status-todo">Por hacer</div>
-                                <div class="task-due">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>En 5 días</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Vista alternativa de lista (oculta por defecto) -->
-            <div class="tasks-list-view" style="display: none;">
-                <div class="tasks-list-header">
-                    <div></div>
-                    <div>Tarea</div>
-                    <div>Fuente</div>
-                    <div>Estado</div>
-                    <div>Prioridad</div>
-                    <div>Fecha límite</div>
-                </div>
-                
-                <!-- Tarea 1 lista -->
-                <div class="tasks-list-item priority-high">
-                    <div class="task-checkbox"><i class="far fa-square"></i></div>
-                    <div class="task-detail">
-                        <div class="task-detail-title">Implementar notificaciones push</div>
-                        <div class="task-detail-project">App Móvil</div>
-                    </div>
-                    <div class="task-source-col">
-                        <div class="source-badge source-jira">
-                            <span>J</span>
-                            <span>MOB-356</span>
-                        </div>
-                    </div>
-                    <div class="task-status-col">
-                        <div class="task-status status-todo">Por hacer</div>
-                    </div>
-                    <div class="task-priority-col">
-                        <i class="fas fa-arrow-up priority-indicator high"></i>
-                        <span>Alta</span>
-                    </div>
-                    <div class="task-due-col">Hoy</div>
-                </div>
-            </div>
+    <div class="main-content">
+      <!-- Encabezado de la página -->
+      <div class="page-header">
+        <h1 class="page-title">Mis Tareas Asignadas</h1>
+        
+        <div style="display: flex; gap: 12px;">
+          <button class="button button-secondary">
+            <i class="fas fa-file-export"></i>
+            <span>Exportar</span>
+          </button>
+          <button class="button button-primary">
+            <i class="fas fa-plus"></i>
+            <span>Crear tarea</span>
+          </button>
         </div>
+      </div>
+      
+      <!-- Barra de filtros -->
+      <div class="tasks-filter-bar">
+        <div class="filter-group">
+          <div style="font-size: 14px; color: #5e6c84;">Estado:</div>
+          <div class="filter-pill active">
+            <span>Todas</span>
+          </div>
+          <div class="filter-pill">
+            <span>Por hacer</span>
+          </div>
+          <div class="filter-pill">
+            <span>En progreso</span>
+          </div>
+          <div class="filter-pill">
+            <span>Finalizadas</span>
+          </div>
+        </div>
+        
+        <div class="tasks-view-toggle">
+          <button class="view-toggle-btn" 
+                  [ngClass]="{'active': viewMode === 'cards'}" 
+                  (click)="setViewMode('cards')">
+            <i class="fas fa-th-large"></i>
+            <span>Tarjetas</span>
+          </button>
+          <button class="view-toggle-btn" 
+                  [ngClass]="{'active': viewMode === 'list'}" 
+                  (click)="setViewMode('list')">
+            <i class="fas fa-list"></i>
+            <span>Lista</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Vista de tarjetas agrupadas -->
+      <div *ngIf="viewMode === 'cards'" class="tasks-container">
+        <!-- Tareas para hoy -->
+        <div class="task-section section-today">
+          <div class="task-section-header">
+            <div class="section-title">
+              <div class="section-icon"><i class="fas fa-calendar-day"></i></div>
+              <span>Para hoy</span>
+              <span class="section-count">3</span>
+            </div>
+          </div>
+          
+          <div class="task-list">
+            <!-- Tarea 1 -->
+            <div class="task-card priority-high">
+              <div class="task-card-header">
+                <div class="task-source">
+                  <div class="source-badge source-jira">
+                    <span>J</span>
+                    <span>MOB-356</span>
+                  </div>
+                </div>
+                <div class="task-badges">
+                  <div class="task-badge badge-story">Story</div>
+                  <div class="task-badge badge-priority">Prioridad: Alta</div>
+                </div>
+                <div class="task-title">Implementar notificaciones push</div>
+                <div class="task-project">
+                  <div class="project-avatar" style="background-color: #0052cc;">AM</div>
+                  <span>App Móvil</span>
+                </div>
+              </div>
+              <div class="task-card-body">
+                <div class="task-description">Integrar sistema de notificaciones push para alertas en tiempo real a los usuarios.</div>
+              </div>
+              <div class="task-card-footer">
+                <div class="task-status status-todo">Por hacer</div>
+                <div class="task-due">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Hoy</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tarea 2 -->
+            <div class="task-card priority-medium">
+              <div class="task-card-header">
+                <div class="task-source">
+                  <div class="source-badge source-trello">
+                    <span>T</span>
+                    <span>WEB-142</span>
+                  </div>
+                </div>
+                <div class="task-badges">
+                  <div class="task-badge badge-task">Task</div>
+                </div>
+                <div class="task-title">Optimizar rendimiento de carga de página</div>
+                <div class="task-project">
+                  <div class="project-avatar" style="background-color: #00b8d9;">WEB</div>
+                  <span>Web</span>
+                </div>
+              </div>
+              <div class="task-card-body">
+                <div class="task-description">Mejorar los tiempos de carga de la página principal reduciendo tamaños de recursos y optimizando JavaScript.</div>
+              </div>
+              <div class="task-card-footer">
+                <div class="task-status status-inprogress">En progreso</div>
+                <div class="task-due">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>Hoy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+            
+        <!-- Tareas próximas -->
+        <div class="task-section section-upcoming">
+          <div class="task-section-header">
+            <div class="section-title">
+              <div class="section-icon"><i class="fas fa-hourglass-half"></i></div>
+              <span>Próximas</span>
+              <span class="section-count">3</span>
+            </div>
+          </div>
+          
+          <div class="task-list">
+            <!-- Tarea 6 -->
+            <div class="task-card priority-medium">
+              <div class="task-card-header">
+                <div class="task-source">
+                  <div class="source-badge source-jira">
+                    <span>J</span>
+                    <span>API-092</span>
+                  </div>
+                </div>
+                <div class="task-badges">
+                  <div class="task-badge badge-story">Story</div>
+                </div>
+                <div class="task-title">Implementar endpoints para gestión de archivos</div>
+                <div class="task-project">
+                  <div class="project-avatar" style="background-color: #6554c0;">API</div>
+                  <span>API</span>
+                </div>
+              </div>
+              <div class="task-card-body">
+                <div class="task-description">Crear nuevos endpoints para subir, descargar y gestionar archivos desde el frontend.</div>
+              </div>
+              <div class="task-card-footer">
+                <div class="task-status status-todo">Por hacer</div>
+                <div class="task-due">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>En 2 días</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tarea 7 -->
+            <div class="task-card priority-low">
+              <div class="task-card-header">
+                <div class="task-source">
+                  <div class="source-badge source-trello">
+                    <span>T</span>
+                    <span>WEB-148</span>
+                  </div>
+                </div>
+                <div class="task-badges">
+                  <div class="task-badge badge-task">Task</div>
+                </div>
+                <div class="task-title">Actualizar documentación de componentes</div>
+                <div class="task-project">
+                  <div class="project-avatar" style="background-color: #00b8d9;">WEB</div>
+                  <span>Web</span>
+                </div>
+              </div>
+              <div class="task-card-body">
+                <div class="task-description">Actualizar la documentación de los componentes UI para incluir los nuevos cambios y ejemplos de uso.</div>
+              </div>
+              <div class="task-card-footer">
+                <div class="task-status status-todo">Por hacer</div>
+                <div class="task-due">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>En 3 días</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tarea 8 -->
+            <div class="task-card priority-medium">
+              <div class="task-card-header">
+                <div class="task-source">
+                  <div class="source-badge source-jira">
+                    <span>J</span>
+                    <span>MOB-362</span>
+                  </div>
+                </div>
+                <div class="task-badges">
+                  <div class="task-badge badge-story">Story</div>
+                </div>
+                <div class="task-title">Integrar analíticas de usuario</div>
+                <div class="task-project">
+                  <div class="project-avatar" style="background-color: #0052cc;">AM</div>
+                  <span>App Móvil</span>
+                </div>
+              </div>
+              <div class="task-card-body">
+                <div class="task-description">Implementar sistema de analíticas para seguimiento de comportamiento de usuarios en la aplicación.</div>
+              </div>
+              <div class="task-card-footer">
+                <div class="task-status status-todo">Por hacer</div>
+                <div class="task-due">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span>En 5 días</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Vista alternativa de lista -->
+      <div *ngIf="viewMode === 'list'" class="tasks-list-view">
+        <div class="tasks-list-header">
+          <div></div>
+          <div>Tarea</div>
+          <div>Fuente</div>
+          <div>Estado</div>
+          <div>Prioridad</div>
+          <div>Fecha límite</div>
+        </div>
+        
+        <!-- Tarea 1 lista (Para hoy) -->
+        <div class="tasks-list-item priority-high">
+          <div class="task-checkbox"><i class="far fa-square"></i></div>
+          <div class="task-detail">
+            <div class="task-detail-title">Implementar notificaciones push</div>
+            <div class="task-detail-project">App Móvil</div>
+          </div>
+          <div class="task-source-col">
+            <div class="source-badge source-jira">
+              <span>J</span>
+              <span>MOB-356</span>
+            </div>
+          </div>
+          <div class="task-status-col">
+            <div class="task-status status-todo">Por hacer</div>
+          </div>
+          <div class="task-priority-col">
+            <i class="fas fa-arrow-up priority-indicator high"></i>
+            <span>Alta</span>
+          </div>
+          <div class="task-due-col">Hoy</div>
+        </div>
+        
+        <!-- Tarea 2 lista (Para hoy) -->
+        <div class="tasks-list-item priority-medium">
+          <div class="task-checkbox"><i class="far fa-square"></i></div>
+          <div class="task-detail">
+            <div class="task-detail-title">Optimizar rendimiento de carga de página</div>
+            <div class="task-detail-project">Web</div>
+          </div>
+          <div class="task-source-col">
+            <div class="source-badge source-trello">
+              <span>T</span>
+              <span>WEB-142</span>
+            </div>
+          </div>
+          <div class="task-status-col">
+            <div class="task-status status-inprogress">En progreso</div>
+          </div>
+          <div class="task-priority-col">
+            <i class="fas fa-arrow-up priority-indicator medium"></i>
+            <span>Media</span>
+          </div>
+          <div class="task-due-col">Hoy</div>
+        </div>
+        
+        <!-- Tarea 6 lista (Próximas) -->
+        <div class="tasks-list-item priority-medium">
+          <div class="task-checkbox"><i class="far fa-square"></i></div>
+          <div class="task-detail">
+            <div class="task-detail-title">Implementar endpoints para gestión de archivos</div>
+            <div class="task-detail-project">API</div>
+          </div>
+          <div class="task-source-col">
+            <div class="source-badge source-jira">
+              <span>J</span>
+              <span>API-092</span>
+            </div>
+          </div>
+          <div class="task-status-col">
+            <div class="task-status status-todo">Por hacer</div>
+          </div>
+          <div class="task-priority-col">
+            <i class="fas fa-arrow-up priority-indicator medium"></i>
+            <span>Media</span>
+          </div>
+          <div class="task-due-col">En 2 días</div>
+        </div>
+        
+        <!-- Tarea 7 lista (Próximas) -->
+        <div class="tasks-list-item priority-low">
+          <div class="task-checkbox"><i class="far fa-square"></i></div>
+          <div class="task-detail">
+            <div class="task-detail-title">Actualizar documentación de componentes</div>
+            <div class="task-detail-project">Web</div>
+          </div>
+          <div class="task-source-col">
+            <div class="source-badge source-trello">
+              <span>T</span>
+              <span>WEB-148</span>
+            </div>
+          </div>
+          <div class="task-status-col">
+            <div class="task-status status-todo">Por hacer</div>
+          </div>
+          <div class="task-priority-col">
+            <i class="fas fa-arrow-up priority-indicator low"></i>
+            <span>Baja</span>
+          </div>
+          <div class="task-due-col">En 3 días</div>
+        </div>
+        
+        <!-- Tarea 8 lista (Próximas) -->
+        <div class="tasks-list-item priority-medium">
+          <div class="task-checkbox"><i class="far fa-square"></i></div>
+          <div class="task-detail">
+            <div class="task-detail-title">Integrar analíticas de usuario</div>
+            <div class="task-detail-project">App Móvil</div>
+          </div>
+          <div class="task-source-col">
+            <div class="source-badge source-jira">
+              <span>J</span>
+              <span>MOB-362</span>
+            </div>
+          </div>
+          <div class="task-status-col">
+            <div class="task-status status-todo">Por hacer</div>
+          </div>
+          <div class="task-priority-col">
+            <i class="fas fa-arrow-up priority-indicator medium"></i>
+            <span>Media</span>
+          </div>
+          <div class="task-due-col">En 5 días</div>
+        </div>
+      </div>
     </div>
-    
+  </div>
 </div>

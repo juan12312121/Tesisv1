@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Column, CrearTareasComponent, Task } from '../crear-tareas/crear-tareas.component';
+import { TruncatePipe } from '../truncate.pipe'; // Ajusta la ruta según la ubicación del archivo
 
 @Component({
   selector: 'app-componente-tableros',
   standalone: true,
-  imports: [CommonModule, DragDropModule, FormsModule, CrearTareasComponent],
+  imports: [CommonModule, DragDropModule, FormsModule, CrearTareasComponent, TruncatePipe],
   templateUrl: './componente-tableros.component.html',
   styleUrls: ['./componente-tableros.component.css']
 })
 export class ComponenteTablerosComponent {
+  // ... (resto del código sin cambios)
 
   columns: Column[] = [
     {

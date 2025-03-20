@@ -1,0 +1,31 @@
+<div class="chat-panel" [ngClass]="{'expanded': isChatOpen}">
+    <div class="chat-header" (click)="toggleChat()">
+      <div class="chat-title">
+        <i class="fas fa-comment-dots"></i>
+        <span>Chat de equipo</span>
+      </div>
+      <div class="chat-participants">3 en línea</div>
+      <button class="chat-toggle">
+        <i class="fas" [ngClass]="isChatOpen ? 'fa-chevron-down' : 'fa-chevron-up'"></i>
+      </button>
+    </div>
+    
+    <div class="chat-body" *ngIf="isChatOpen">
+      <div class="chat-messages">
+        <div *ngFor="let msg of messages" [ngClass]="msg.type + ' message'">
+          <div *ngIf="msg.type === 'incoming'" class="message-sender">{{ msg.sender }}</div>
+          <div class="message-content">{{ msg.content }}</div>
+          <div class="message-time">{{ msg.time }}</div>
+        </div>
+      </div>
+      <div class="chat-input-container">
+        <div class="chat-input-wrapper">
+          <input type="text" class="chat-input" placeholder="Escribe un mensaje..."
+                 [(ngModel)]="newMessage" (keyup.enter)="sendMessage()">
+          <button class="chat-send" (click)="sendMessage()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

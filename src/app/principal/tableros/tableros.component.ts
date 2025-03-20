@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AsideComponent } from '../../componentes/aside/aside.component';
+import { ChatComponent } from '../../componentes/chat/chat.component';
 import { ComponenteTablerosComponent } from '../../componentes/componente-tableros/componente-tableros.component';
 import { ModalInvitarUsuariosComponent } from '../../componentes/modal-invitar-usuarios/modal-invitar-usuarios.component';
 import { NavbarComponent } from '../../componentes/navbar/navbar.component';
+
 
 
 interface Invitee {
@@ -17,7 +19,7 @@ interface Invitee {
 @Component({
   selector: 'app-tableros',
   standalone: true,
-  imports: [NavbarComponent, FormsModule, AsideComponent, CommonModule, DragDropModule, ComponenteTablerosComponent,ModalInvitarUsuariosComponent],
+  imports: [NavbarComponent, FormsModule, AsideComponent, CommonModule, DragDropModule, ComponenteTablerosComponent,ModalInvitarUsuariosComponent,ChatComponent],
   templateUrl: './tableros.component.html',
   styleUrls: ['./tableros.component.css']
 })
