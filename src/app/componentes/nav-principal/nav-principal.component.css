@@ -6,8 +6,8 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #FFFFFF;   
-    color: #34495E;  
+    background-color: #FFFFFF;
+    color: #34495E;
     line-height: 1.6;
 }
 
@@ -21,7 +21,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    background-color: #FFFFFF;   
+    background-color: #FFFFFF;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
@@ -40,12 +40,14 @@ nav.scrolled {
     align-items: center;
     font-size: 24px;
     font-weight: 700;
-    color: #2C3E50;   
+    color: #2C3E50;
     text-decoration: none;
     position: relative;
     overflow: hidden;
 }
 
+.logo img{
+padding-right: 8px;}
 /* Animación para el logo */
 .logo::after {
     content: '';
@@ -73,6 +75,12 @@ nav.scrolled {
     transform: rotate(360deg);
 }
 
+.task{
+  color: #0277bd;
+}
+.tracker{
+  color: #17a589;
+}
 .nav-buttons {
     display: flex;
     gap: 15px;

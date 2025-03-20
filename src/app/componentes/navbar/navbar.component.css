@@ -1,13 +1,20 @@
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-1px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
 /* Header Styles con paleta de colores TaskTraker */
 header {
-  background-color: #2C3E50; /* Azul oscuro, usado para textos principales como encabezados y logo */
+  background-color: #2C3E50;
+  /* Azul oscuro, usado para textos principales como encabezados y logo */
   padding: 0;
   display: flex;
   align-items: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   height: 56px;
   z-index: 10;
-  font-family: 'Montserrat', sans-serif; /* Cambiado a la fuente de TaskTraker */
+  font-family: 'Montserrat', sans-serif;
+  /* Cambiado a la fuente de TaskTraker */
 }
 
 .logo-container {
@@ -16,7 +23,9 @@ header {
   align-items: center;
   padding: 0 16px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
+  /*background-color: rgba(0, 0, 0, 0.1);*/
+  background-color: #e1ebf8;
+  border: solid 1px #2c3e502d;
 }
 
 .logo {
@@ -27,9 +36,21 @@ header {
   align-items: center;
   gap: 8px;
 }
+.logo:hover{
+  animation: float 4s infinite ease-in-out, pulse 2s infinite ease-in-out alternate;
 
-.logo i {
-  color: #1ABC9C; /* Verde turquesa para el icono del logo */
+}
+.tasktraker{
+  display: flex;
+}
+
+
+.task {
+  color: #0277bd;
+}
+
+.tracker {
+  color: #17a589;
 }
 
 .nav-container {
@@ -48,24 +69,28 @@ header {
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease; /* Transición más suave como en TaskTraker */
+  transition: all 0.3s ease;
+  /* Transición más suave como en TaskTraker */
 }
 
 .nav-item i {
   margin-right: 8px;
   font-size: 16px;
-  color: #1ABC9C; /* Verde turquesa para iconos */
+  color: #1ABC9C;
+  /* Verde turquesa para iconos */
   transition: transform 0.3s ease;
 }
 
 .nav-item:hover i {
-  transform: translateY(-2px); /* Animación similar a los botones de TaskTraker */
+  transform: translateY(-2px);
+  /* Animación similar a los botones de TaskTraker */
 }
 
 .nav-item:hover,
 .nav-item.active {
   color: white;
-  background-color: rgba(26, 188, 156, 0.1); /* Verde turquesa con transparencia */
+  background-color: rgba(26, 188, 156, 0.1);
+  /* Verde turquesa con transparencia */
 }
 
 .search-container {
@@ -78,7 +103,8 @@ header {
   width: 100%;
   padding: 8px 12px 8px 32px;
   border-radius: 4px;
-  border: 1px solid #ECF0F1; /* Gris muy claro para bordes */
+  border: 1px solid #ECF0F1;
+  /* Gris muy claro para bordes */
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   font-size: 14px;
@@ -92,8 +118,10 @@ header {
 .search-input:focus {
   outline: none;
   background-color: white;
-  color: #34495E; /* Gris azulado para texto */
-  border-color: #1ABC9C; /* Verde turquesa para el borde en focus */
+  color: #34495E;
+  /* Gris azulado para texto */
+  border-color: #1ABC9C;
+  /* Verde turquesa para el borde en focus */
   box-shadow: 0 0 5px rgba(26, 188, 156, 0.3);
 }
 
@@ -107,8 +135,9 @@ header {
   transition: color 0.3s ease;
 }
 
-.search-input:focus + .search-icon {
-  color: #1ABC9C; /* Verde turquesa para el icono en focus */
+.search-input:focus+.search-icon {
+  color: #1ABC9C;
+  /* Verde turquesa para el icono en focus */
 }
 
 .user-actions {
@@ -134,9 +163,12 @@ header {
 }
 
 .action-icon:hover {
-  background-color: rgba(26, 188, 156, 0.1); /* Verde turquesa con transparencia */
-  color: #1ABC9C; /* Verde turquesa para el icono en hover */
-  transform: translateY(-2px); /* Animación similar a TaskTraker */
+  background-color: rgba(26, 188, 156, 0.1);
+  /* Verde turquesa con transparencia */
+  color: #1ABC9C;
+  /* Verde turquesa para el icono en hover */
+  transform: translateY(-2px);
+  /* Animación similar a TaskTraker */
 }
 
 /* Dropdown de Perfil */
@@ -149,7 +181,8 @@ header {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #1ABC9C; /* Verde turquesa para el avatar */
+  background-color: #1ABC9C;
+  /* Verde turquesa para el avatar */
   color: white;
   font-weight: bold;
   display: flex;
@@ -176,7 +209,8 @@ header {
   width: 200px;
   display: none;
   z-index: 100;
-  border-bottom: 2px solid #1ABC9C; /* Borde inferior verde turquesa */
+  border-bottom: 2px solid #1ABC9C;
+  /* Borde inferior verde turquesa */
 }
 
 .profile-container:hover .profile-dropdown {
@@ -192,19 +226,23 @@ header {
 .profile-dropdown li {
   padding: 10px 16px;
   font-size: 14px;
-  color: #34495E; /* Gris azulado para texto */
+  color: #34495E;
+  /* Gris azulado para texto */
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .profile-dropdown li:hover {
-  background-color: #F8FAFB; /* Color más suave similar al degradado de fondo */
-  color: #2C3E50; /* Azul oscuro en hover */
+  background-color: #F8FAFB;
+  /* Color más suave similar al degradado de fondo */
+  color: #2C3E50;
+  /* Azul oscuro en hover */
 }
 
 .profile-dropdown .divider {
   height: 1px;
-  background-color: #ECF0F1; /* Gris muy claro para bordes */
+  background-color: #ECF0F1;
+  /* Gris muy claro para bordes */
   margin: 4px 0;
 }
 
@@ -220,14 +258,16 @@ header {
   padding: 0;
   font-size: 14px;
   cursor: pointer;
-  color: #34495E; /* Gris azulado para texto */
+  color: #34495E;
+  /* Gris azulado para texto */
   width: 100%;
   text-align: left;
   transition: color 0.3s ease;
 }
 
 .logout-btn:hover {
-  color: #1ABC9C; /* Verde turquesa en hover */
+  color: #1ABC9C;
+  /* Verde turquesa en hover */
   text-decoration: none;
 }
 
@@ -243,7 +283,8 @@ header {
   top: 120%;
   left: 50%;
   transform: translateX(-50%);
-  background: #2C3E50; /* Azul oscuro para tooltips */
+  background: #2C3E50;
+  /* Azul oscuro para tooltips */
   color: #fff;
   padding: 4px 10px;
   border-radius: 4px;
@@ -254,7 +295,8 @@ header {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateX(-50%) translateY(5px);
   z-index: 20;
-  border-left: 3px solid #1ABC9C; /* Borde izquierdo verde turquesa */
+  border-left: 3px solid #1ABC9C;
+  /* Borde izquierdo verde turquesa */
 }
 
 [data-tooltip]:hover::after {
