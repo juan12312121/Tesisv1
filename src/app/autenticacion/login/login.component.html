@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <div class="container">
     <div class="background-shapes">
         <div class="shape"></div>
@@ -6,18 +6,20 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    
+
     <div class="login-container">
         <div class="login-header">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="/Logo.jpeg" alt="TaskTracker Logo" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="/icons/logostt320.png" alt="TaskTracker Logo" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
-                <span>tasktracker</span>
+
+
+                <!--<span>tasktracker</span>-->
             </div>
             <div class="login-title">Gestión de Actividades Empresariales</div>
         </div>
-        
+
         <div class="login-body">
             <form (submit)="onSubmit($event)">
                 <div class="form-group">
@@ -27,7 +29,7 @@
                         <input type="text" class="form-control" id="username" placeholder="ejemplo@empresa.com" required [(ngModel)]="username" name="username">
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label class="form-label" for="password">Contraseña</label>
                     <div class="input-container">
@@ -36,7 +38,7 @@
                         <i class="toggle-password fas" [ngClass]="passwordVisible ? 'fa-eye-slash' : 'fa-eye'" (click)="togglePasswordVisibility()"></i>
                     </div>
                 </div>
-                
+
                 <div class="remember-row">
                     <div class="checkbox-container">
                         <input type="checkbox" id="remember" [(ngModel)]="rememberMe" name="rememberMe">
@@ -44,16 +46,17 @@
                     </div>
                     <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </div>
-                
+
                 <button type="submit" class="button button-primary">
                     <i class="fas fa-sign-in-alt"></i>
                     <span>Iniciar sesión</span>
                 </button>
             </form>
-            
+
             <div class="login-footer">
                 ¿No tienes una cuenta? <a routerLink="/registro" class="signup-link">Regístrate ahora</a>
             </div>
         </div>
     </div>
 </div>
+
